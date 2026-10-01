@@ -1,0 +1,36 @@
+events 3407 {'MDW': 1340, 'MIA': 730, 'NYC': 1337}
+
+events 2025+ with candles+forecasts: {'MDW': 609, 'MIA': 602, 'NYC': 607}
+
+===== h=8 (thr 0.05) OOS events=1623 days=544 | Brier mkt=0.1078 blend=0.1180 comb=0.1062 lpm coef=0.41
+ALL: N=2291 pnl/ct=+0.0454 ROI=+7.8% Sharpe(all days)=3.77 win=0.65
+by station: {'MDW': (0.068, 859), 'MIA': (0.023, 821), 'NYC': (0.044, 611)}
+by season : {'Apr,May,Oct': (0.047, 611), 'Jun-Sep': (0.015, 947), 'Nov-Mar': (0.083, 733)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+by month  : {'2025-04': (0.174, 91), '2025-05': (0.039, 134), '2025-06': (0.017, 154), '2025-07': (0.017, 132), '2025-08': (0.146, 86), '2025-09': (-0.084, 88), '2025-10': (0.076, 67), '2025-11': (0.106, 96), '2025-12': (0.097, 146), '2026-01': (0.1, 146), '2026-02': (0.078, 151), '2026-03': (0.053, 194), '2026-04': (0.009, 175), '2026-05': (0.005, 144), '2026-06': (-0.011, 133), '2026-07': (-0.0, 142), '2026-08': (0.09, 105), '2026-09': (-0.031, 107)}
+WINTER ONLY: N=733 pnl/ct=+0.0831 Sharpe=7.68 days=151 | by station: {'MDW': (0.09, 299), 'MIA': (0.07, 249), 'NYC': (0.089, 185)}
+capacity @10%/cap100: contracts/signal=85, $/city-day=+5.24 => $5,740/yr across 3 cities; winter-only $/city-day=+12.29
+
+===== h=10 (thr 0.05) OOS events=1623 days=544 | Brier mkt=0.1077 blend=0.1183 comb=0.1063 lpm coef=0.39
+ALL: N=1998 pnl/ct=+0.0412 ROI=+6.9% Sharpe(all days)=3.24 win=0.66
+by station: {'MDW': (0.063, 721), 'MIA': (0.017, 759), 'NYC': (0.046, 518)}
+by season : {'Apr,May,Oct': (0.03, 547), 'Jun-Sep': (0.012, 833), 'Nov-Mar': (0.09, 618)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+by month  : {'2025-04': (0.149, 76), '2025-05': (0.039, 118), '2025-06': (0.009, 148), '2025-07': (0.006, 119), '2025-08': (0.139, 79), '2025-09': (-0.077, 77), '2025-10': (0.034, 61), '2025-11': (0.123, 74), '2025-12': (0.077, 118), '2026-01': (0.114, 125), '2026-02': (0.079, 123), '2026-03': (0.075, 178), '2026-04': (-0.009, 156), '2026-05': (0.001, 136), '2026-06': (-0.006, 120), '2026-07': (-0.011, 111), '2026-08': (0.107, 88), '2026-09': (-0.046, 91)}
+WINTER ONLY: N=618 pnl/ct=+0.0897 Sharpe=8.02 days=151 | by station: {'MDW': (0.114, 250), 'MIA': (0.063, 213), 'NYC': (0.086, 155)}
+capacity @10%/cap100: contracts/signal=89, $/city-day=+4.40 => $4,816/yr across 3 cities; winter-only $/city-day=+11.80
+
+===== h=12 (thr 0.05) OOS events=1622 days=544 | Brier mkt=0.1062 blend=0.1180 comb=0.1047 lpm coef=0.34
+ALL: N=1728 pnl/ct=+0.0392 ROI=+6.2% Sharpe(all days)=2.84 win=0.69
+by station: {'MDW': (0.059, 593), 'MIA': (0.021, 709), 'NYC': (0.042, 426)}
+by season : {'Apr,May,Oct': (0.021, 477), 'Jun-Sep': (0.016, 710), 'Nov-Mar': (0.087, 541)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+by month  : {'2025-04': (0.101, 67), '2025-05': (0.018, 96), '2025-06': (0.02, 104), '2025-07': (0.057, 100), '2025-08': (0.166, 72), '2025-09': (-0.04, 86), '2025-10': (-0.009, 52), '2025-11': (0.16, 77), '2025-12': (0.08, 109), '2026-01': (0.064, 108), '2026-02': (0.063, 105), '2026-03': (0.086, 142), '2026-04': (0.002, 132), '2026-05': (0.012, 130), '2026-06': (-0.032, 97), '2026-07': (0.018, 106), '2026-08': (0.088, 65), '2026-09': (-0.122, 80)}
+WINTER ONLY: N=541 pnl/ct=+0.0866 Sharpe=7.52 days=151 | by station: {'MDW': (0.091, 206), 'MIA': (0.076, 204), 'NYC': (0.097, 131)}
+capacity @10%/cap100: contracts/signal=91, $/city-day=+3.68 => $4,026/yr across 3 cities; winter-only $/city-day=+10.14

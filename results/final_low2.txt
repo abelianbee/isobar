@@ -1,0 +1,36 @@
+events 800 {'AUS': 114, 'DEN': 115, 'LAX': 115, 'MDW': 115, 'MIA': 113, 'NYC': 114, 'PHL': 114}
+
+events 2025+ with candles+forecasts: {'AUS': 114, 'DEN': 115, 'LAX': 115, 'MDW': 115, 'MIA': 113, 'NYC': 114, 'PHL': 114}
+
+===== h=8 (thr 0.05) OOS events=451 days=65 | Brier mkt=0.1167 blend=0.1207 comb=0.1155 lpm coef=0.48
+ALL: N=567 pnl/ct=+0.0410 ROI=+8.3% Sharpe(all days)=5.37 win=0.55
+by station: {'AUS': (0.149, 71), 'DEN': (0.108, 53), 'LAX': (0.073, 89), 'MDW': (-0.047, 59), 'MIA': (0.033, 80), 'NYC': (0.004, 82), 'PHL': (0.002, 133)}
+by season : {'Jun-Sep': (0.221, 30), 'Nov-Mar': (0.031, 537)}
+by station x season:
+           mean            size        
+season  Jun-Sep Nov-Mar Jun-Sep Nov-Mar
+by month  : {'2026-02': (0.023, 335), '2026-03': (0.043, 202), '2026-09': (0.221, 30)}
+WINTER ONLY: N=537 pnl/ct=+0.0309 Sharpe=4.26 days=58 | by station: {'AUS': (0.139, 68), 'DEN': (0.104, 51), 'LAX': (0.062, 84), 'MDW': (-0.074, 49), 'MIA': (0.014, 76), 'NYC': (-0.011, 79), 'PHL': (0.001, 130)}
+capacity @10%/cap100: contracts/signal=48, $/city-day=+1.91 => $4,885/yr across 7 cities; winter-only $/city-day=+2.06
+
+===== h=10 (thr 0.05) OOS events=451 days=65 | Brier mkt=0.1149 blend=0.1205 comb=0.1136 lpm coef=0.46
+ALL: N=471 pnl/ct=+0.0313 ROI=+5.8% Sharpe(all days)=3.37 win=0.59
+by station: {'AUS': (0.121, 55), 'DEN': (0.105, 49), 'LAX': (0.071, 79), 'MDW': (0.008, 50), 'MIA': (0.031, 63), 'NYC': (-0.038, 66), 'PHL': (-0.023, 109)}
+by season : {'Jun-Sep': (0.162, 15), 'Nov-Mar': (0.027, 456)}
+by station x season:
+           mean            size        
+season  Jun-Sep Nov-Mar Jun-Sep Nov-Mar
+by month  : {'2026-02': (0.013, 280), '2026-03': (0.049, 176), '2026-09': (0.162, 15)}
+WINTER ONLY: N=456 pnl/ct=+0.0270 Sharpe=3.02 days=58 | by station: {'AUS': (0.117, 54), 'DEN': (0.099, 47), 'LAX': (0.063, 77), 'MDW': (0.007, 43), 'MIA': (0.02, 62), 'NYC': (-0.038, 66), 'PHL': (-0.023, 107)}
+capacity @10%/cap100: contracts/signal=58, $/city-day=+1.19 => $3,052/yr across 7 cities; winter-only $/city-day=+1.27
+
+===== h=12 (thr 0.05) OOS events=451 days=65 | Brier mkt=0.1148 blend=0.1219 comb=0.1135 lpm coef=0.41
+ALL: N=362 pnl/ct=+0.0381 ROI=+6.3% Sharpe(all days)=3.76 win=0.66
+by station: {'AUS': (0.094, 52), 'DEN': (0.159, 40), 'LAX': (0.072, 62), 'MDW': (-0.036, 37), 'MIA': (0.074, 48), 'NYC': (-0.062, 44), 'PHL': (-0.018, 79)}
+by season : {'Jun-Sep': (0.091, 9), 'Nov-Mar': (0.037, 353)}
+by station x season:
+           mean            size        
+season  Jun-Sep Nov-Mar Jun-Sep Nov-Mar
+by month  : {'2026-02': (0.038, 220), '2026-03': (0.035, 133), '2026-09': (0.091, 9)}
+WINTER ONLY: N=353 pnl/ct=+0.0367 Sharpe=3.80 days=58 | by station: {'AUS': (0.094, 52), 'DEN': (0.159, 40), 'LAX': (0.069, 61), 'MDW': (-0.05, 32), 'MIA': (0.071, 47), 'NYC': (-0.062, 44), 'PHL': (-0.019, 77)}
+capacity @10%/cap100: contracts/signal=61, $/city-day=+2.18 => $5,562/yr across 7 cities; winter-only $/city-day=+2.41

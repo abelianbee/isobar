@@ -1,0 +1,5 @@
+data/
+*.pyc
+__pycache__/
+.pytest_cache/
+results/release/*.log

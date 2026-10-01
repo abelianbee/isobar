@@ -1,0 +1,51 @@
+models: ['bom_access_global', 'cma_grapes_global', 'dmi_seamless', 'ecmwf_aifs025_single', 'ecmwf_ifs', 'ecmwf_ifs025', 'gem_seamless', 'gfs_graphcast025', 'gfs_seamless', 'icon_seamless', 'jma_seamless', 'kma_seamless', 'knmi_seamless', 'meteofrance_seamless', 'metno_seamless', 'ncep_hrrr_conus', 'ncep_nbm_conus', 'ukmo_seamless']
+MODE=w: forecast OOS MAE by station/year:
+year     2025  2026
+station            
+AUS      2.07  1.70
+DEN      2.13  1.95
+LAX      1.55  1.64
+MDW      1.70  1.88
+MIA      1.23  1.25
+NYC      1.69  1.92
+PHL      1.82  1.73
+n models used: year     2025  2026
+station            
+AUS        12    13
+DEN        12    13
+LAX        12    13
+MDW        12    13
+MIA        12    13
+NYC        12    13
+PHL        12    13
+events 427 {'NYC': 427}
+
+h= 2 OOS events=291 Brier mkt=0.1126 model=0.1118 comb=0.1050 b_lpm=0.50
+   thr=0.03: N=352Y+361N pnl/ct=+0.0885 ROI=+15.8% Sharpe=6.03 | by station: NYC:+0.089(n=713) | hourly vol at signal: median=83 p25=10 zero-share=0.15; OI median=236
+   thr=0.05: N=259Y+247N pnl/ct=+0.1100 ROI=+20.4% Sharpe=6.09 | by station: NYC:+0.110(n=506) | hourly vol at signal: median=88 p25=18 zero-share=0.14; OI median=258
+      by quarter: {'2025Q3': (0.095, 125), '2025Q4': (0.143, 120), '2026Q1': (0.065, 169), '2026Q2': (0.154, 65), '2026Q3': (0.207, 27)}
+   thr=0.08: N=111Y+145N pnl/ct=+0.1395 ROI=+24.7% Sharpe=5.33 | by station: NYC:+0.139(n=256) | hourly vol at signal: median=110 p25=30 zero-share=0.09; OI median=291
+
+h= 8 OOS events=291 Brier mkt=0.1063 model=0.1118 comb=0.1018 b_lpm=0.46
+   thr=0.03: N=271Y+311N pnl/ct=+0.0647 ROI=+11.5% Sharpe=3.77 | by station: NYC:+0.065(n=582) | hourly vol at signal: median=208 p25=73 zero-share=0.04; OI median=1278
+   thr=0.05: N=165Y+213N pnl/ct=+0.0988 ROI=+17.6% Sharpe=4.69 | by station: NYC:+0.099(n=378) | hourly vol at signal: median=230 p25=91 zero-share=0.02; OI median=1348
+      by quarter: {'2025Q3': (0.059, 95), '2025Q4': (0.097, 82), '2026Q1': (0.084, 126), '2026Q2': (0.145, 54), '2026Q3': (0.25, 21)}
+   thr=0.08: N=34Y+136N pnl/ct=+0.0977 ROI=+15.3% Sharpe=3.16 | by station: NYC:+0.098(n=170) | hourly vol at signal: median=282 p25=118 zero-share=0.02; OI median=1537
+
+h=12 OOS events=291 Brier mkt=0.1041 model=0.1118 comb=0.1005 b_lpm=0.34
+   thr=0.03: N=186Y+255N pnl/ct=+0.0630 ROI=+10.2% Sharpe=3.30 | by station: NYC:+0.063(n=441) | hourly vol at signal: median=251 p25=87 zero-share=0.02; OI median=2299
+   thr=0.05: N=76Y+155N pnl/ct=+0.1018 ROI=+16.2% Sharpe=3.95 | by station: NYC:+0.102(n=231) | hourly vol at signal: median=300 p25=99 zero-share=0.01; OI median=2726
+      by quarter: {'2025Q3': (0.045, 45), '2025Q4': (0.064, 40), '2026Q1': (0.111, 80), '2026Q2': (0.114, 46), '2026Q3': (0.239, 20)}
+   thr=0.08: N=24Y+82N pnl/ct=+0.1026 ROI=+16.2% Sharpe=2.57 | by station: NYC:+0.103(n=106) | hourly vol at signal: median=387 p25=221 zero-share=0.01; OI median=3054
+
+h=14 OOS events=291 Brier mkt=0.1003 model=0.1117 comb=0.0969 b_lpm=0.30
+   thr=0.03: N=131Y+225N pnl/ct=+0.0721 ROI=+11.4% Sharpe=3.47 | by station: NYC:+0.072(n=356) | hourly vol at signal: median=327 p25=128 zero-share=0.01; OI median=3048
+   thr=0.05: N=44Y+135N pnl/ct=+0.0776 ROI=+11.8% Sharpe=2.57 | by station: NYC:+0.078(n=179) | hourly vol at signal: median=396 p25=151 zero-share=0.01; OI median=3500
+      by quarter: {'2025Q3': (0.011, 38), '2025Q4': (0.03, 22), '2026Q1': (0.038, 55), '2026Q2': (0.14, 44), '2026Q3': (0.227, 20)}
+   thr=0.08: N=21Y+62N pnl/ct=+0.1365 ROI=+21.7% Sharpe=2.87 | by station: NYC:+0.137(n=83) | hourly vol at signal: median=451 p25=183 zero-share=0.00; OI median=3992
+
+h=22 OOS events=284 Brier mkt=0.0881 model=0.1104 comb=0.0853 b_lpm=0.29
+   thr=0.03: N=96Y+218N pnl/ct=+0.0688 ROI=+9.9% Sharpe=3.40 | by station: NYC:+0.069(n=314) | hourly vol at signal: median=989 p25=435 zero-share=0.06; OI median=6374
+   thr=0.05: N=34Y+126N pnl/ct=+0.0686 ROI=+10.0% Sharpe=2.34 | by station: NYC:+0.069(n=160) | hourly vol at signal: median=1059 p25=444 zero-share=0.10; OI median=7128
+      by quarter: {'2025Q3': (-0.001, 31), '2025Q4': (0.012, 32), '2026Q1': (0.052, 47), '2026Q2': (0.136, 34), '2026Q3': (0.222, 16)}
+   thr=0.08: N=17Y+49N pnl/ct=+0.1617 ROI=+25.3% Sharpe=3.22 | by station: NYC:+0.162(n=66) | hourly vol at signal: median=1154 p25=503 zero-share=0.09; OI median=7641

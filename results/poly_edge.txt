@@ -1,0 +1,10 @@
+bracket rows 10668 events 1428 {'atlanta': 107, 'chicago': 60, 'dallas': 108, 'london': 394, 'miami': 60, 'nyc': 382, 'seattle': 107, 'seoul': 104, 'toronto': 106}
+events with exactly one winner: 1.0
+events with forecasts 1425 {'atlanta': 106, 'chicago': 60, 'dallas': 108, 'london': 394, 'miami': 60, 'nyc': 380, 'seattle': 107, 'seoul': 104, 'toronto': 106} date range 2025-02-22 2026-03-22
+
+ALL events=1425 Brier market=0.0855 blend=0.0873 comb(Kalshi coefs, no fitting)=0.0823 | rolling OOS events=1356 comb(rolling)=0.0809 lpm coef=0.47
+full-sample logit: {'const': 0.212, 'lmid': 0.707, 'lpm': 0.495} z(lpm)= 14.9
+rolling refit                        thr=0.05: N=510Y+1540N pnl/ct=+0.1048 Sharpe=9.42 win=0.71 | winter N=1294 pnl/ct=+0.1156 | by city: {'atlanta': (0.163, 182), 'chicago': (0.008, 137), 'dallas': (0.084, 116), 'london': (0.092, 505), 'miami': (0.128, 123), 'nyc': (0.101, 530), 'seattle': (0.09, 197), 'seoul': (0.123, 125), 'toronto': (0.189, 135)}
+rolling refit                        thr=0.08: N=221Y+944N pnl/ct=+0.1189 Sharpe=8.04 win=0.73 | winter N=698 pnl/ct=+0.1452 | by city: {'atlanta': (0.193, 111), 'chicago': (0.083, 65), 'dallas': (0.095, 62), 'london': (0.073, 274), 'miami': (0.097, 78), 'nyc': (0.116, 324), 'seattle': (0.114, 124), 'seoul': (0.184, 59), 'toronto': (0.23, 68)}
+Kalshi coefficients (pure transfer)  thr=0.05: N=619Y+1025N pnl/ct=+0.1191 Sharpe=9.44 win=0.76 | winter N=1060 pnl/ct=+0.1207 | by city: {'atlanta': (0.189, 131), 'chicago': (0.051, 99), 'dallas': (0.119, 74), 'london': (0.097, 528), 'miami': (0.068, 106), 'nyc': (0.15, 349), 'seattle': (0.118, 159), 'seoul': (0.178, 86), 'toronto': (0.111, 112)}
+Kalshi coefficients (pure transfer)  thr=0.08: N=169Y+486N pnl/ct=+0.1666 Sharpe=8.40 win=0.83 | winter N=457 pnl/ct=+0.1761 | by city: {'atlanta': (0.23, 77), 'chicago': (0.124, 51), 'dallas': (0.102, 42), 'london': (0.105, 121), 'miami': (0.121, 59), 'nyc': (0.202, 166), 'seattle': (0.194, 73), 'seoul': (0.216, 29), 'toronto': (0.191, 37)}

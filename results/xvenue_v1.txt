@@ -1,0 +1,43 @@
+rows 46396 events 643 range 2025-03-01 2026-03-26
+{'atlanta': 50, 'chicago': 62, 'dallas': 43, 'miami': 65, 'nyc': 355, 'seattle': 68}
+{'shoulder': 75, 'summer': 107, 'winter': 461}
+
+=== 1. Does the Polymarket-implied bracket probability carry information beyond the Kalshi mid? (logit, event-clustered) ===
+D-1 14-17Z   n=  6482 ev= 496 | lmid 1.21 lpx 0.17 (z= 2.4) | control own-fit lpk 1.22 (z= 5.1) | Brier mid 0.1156 px 0.1281 comb 0.1146
+D-1 18-21Z   n= 11685 ev= 558 | lmid 1.16 lpx 0.15 (z= 2.4) | control own-fit lpk 1.11 (z= 5.1) | Brier mid 0.1143 px 0.1272 comb 0.1137
+D-1 22Z-23Z  n=  6070 ev= 545 | lmid 1.17 lpx 0.15 (z= 2.3) | control own-fit lpk 1.07 (z= 4.9) | Brier mid 0.1112 px 0.1246 comb 0.1106
+D 00-03Z     n= 12573 ev= 586 | lmid 1.07 lpx 0.18 (z= 2.5) | control own-fit lpk 1.02 (z= 5.0) | Brier mid 0.1105 px 0.1236 comb 0.1102
+D 04-05Z     n=  6404 ev= 584 | lmid 1.13 lpx 0.16 (z= 2.7) | control own-fit lpk 1.10 (z= 4.9) | Brier mid 0.1060 px 0.1220 comb 0.1056
+ALL          n= 46396 ev= 643 | lmid 1.13 lpx 0.16 (z= 2.8) | control own-fit lpk 1.08 (z= 6.9) | Brier mid 0.1112 px 0.1251 comb 0.1107
+
+=== 2. Lead-lag on implied means (per event, hourly): dmu_K(t+1) ~ gap(t)=mu_P_adj-mu_K, dmu_K(t), dmu_P(t) ; and reverse ===
+all       n=  5753 | Kalshi->Poly-price: gap +0.020 (t= 2.0) lagged dP +0.025 (t= 1.2) own dK -0.048 | Poly->Kalshi-price: gap -0.026 (t=-0.7) lagged dK -0.218 (t=-1.7) | share of adjustment done by Kalshi -3.31 | corr(dk,dp) 0.09 sd gap 1.18
+D-1       n=  3056 | Kalshi->Poly-price: gap +0.019 (t= 2.5) lagged dP +0.026 (t= 1.7) own dK -0.096 | Poly->Kalshi-price: gap +0.034 (t= 1.0) lagged dK -0.046 (t=-1.2) | share of adjustment done by Kalshi 0.37 | corr(dk,dp) 0.04 sd gap 1.16
+D         n=  2697 | Kalshi->Poly-price: gap +0.020 (t= 1.2) lagged dP +0.021 (t= 0.6) own dK -0.016 | Poly->Kalshi-price: gap -0.076 (t=-1.3) lagged dK -0.289 (t=-1.4) | share of adjustment done by Kalshi -0.35 | corr(dk,dp) 0.13 sd gap 1.19
+chicago   n=   657 | Kalshi->Poly-price: gap +0.001 (t= 0.0) lagged dP +0.052 (t= 0.9) own dK -0.153 | Poly->Kalshi-price: gap -0.007 (t=-0.3) lagged dK -0.051 (t=-1.4) | share of adjustment done by Kalshi -0.14 | corr(dk,dp) 0.13 sd gap 1.52
+miami     n=   745 | Kalshi->Poly-price: gap +0.028 (t= 1.8) lagged dP -0.044 (t=-0.6) own dK -0.033 | Poly->Kalshi-price: gap +0.066 (t= 4.6) lagged dK -0.124 (t=-1.4) | share of adjustment done by Kalshi 0.29 | corr(dk,dp) 0.18 sd gap 0.86
+nyc       n=  2582 | Kalshi->Poly-price: gap +0.032 (t= 2.1) lagged dP +0.031 (t= 0.9) own dK +0.005 | Poly->Kalshi-price: gap -0.020 (t=-0.3) lagged dK -0.365 (t=-1.3) | share of adjustment done by Kalshi 2.72 | corr(dk,dp) 0.09 sd gap 1.18
+atlanta   n=   507 | Kalshi->Poly-price: gap +0.029 (t= 1.7) lagged dP +0.039 (t= 1.2) own dK +0.129 | Poly->Kalshi-price: gap +0.002 (t= 0.0) lagged dK +0.010 (t= 0.1) | share of adjustment done by Kalshi 0.92 | corr(dk,dp) -0.01 sd gap 1.01
+dallas    n=   464 | Kalshi->Poly-price: gap -0.004 (t=-0.5) lagged dP -0.009 (t=-0.4) own dK -0.045 | Poly->Kalshi-price: gap -0.119 (t=-1.0) lagged dK -0.607 (t=-2.2) | share of adjustment done by Kalshi 0.03 | corr(dk,dp) -0.01 sd gap 1.45
+seattle   n=   798 | Kalshi->Poly-price: gap +0.019 (t= 1.3) lagged dP +0.013 (t= 1.2) own dK -0.098 | Poly->Kalshi-price: gap -0.061 (t=-1.7) lagged dK -0.069 (t=-0.8) | share of adjustment done by Kalshi -0.46 | corr(dk,dp) 0.06 sd gap 0.82
+
+=== 3. Walk-forward trading Kalshi (monthly refit on prior months, warm-up 40 events), thr=0.05, taker fee, one position per bracket-side per event (first signal) ===
+D-1 all hours | mid+poly                                     N=  371 (174Y/197N) pnl/ct=+0.0404 t= 1.9 win=0.67 dailySharpe=2.38 days=272 | atlanta:+0.061(50) chicago:+0.027(52) dallas:-0.025(30) miami:+0.034(76) nyc:+0.029(85) seattle:+0.080(78)
+D-1 all hours | CONTROL mid+own normal fit                   N=  315 (144Y/171N) pnl/ct=+0.0155 t= 0.7 win=0.65 dailySharpe=0.91 days=272 | atlanta:+0.124(19) chicago:+0.034(33) dallas:+0.010(9) miami:+0.075(75) nyc:-0.038(133) seattle:+0.018(46)
+D-1 22Z..D 03Z | mid+poly                                    N=  245 (86Y/159N) pnl/ct=+0.0128 t= 0.5 win=0.69 dailySharpe=0.67 days=271 | atlanta:+0.014(35) chicago:-0.003(37) dallas:+0.024(28) miami:-0.065(42) nyc:+0.063(51) seattle:+0.031(52)
+D-1 22Z..D 03Z | CONTROL mid+own normal fit                  N=  288 (103Y/185N) pnl/ct=+0.0204 t= 1.0 win=0.65 dailySharpe=1.24 days=271 | atlanta:-0.032(28) chicago:+0.108(28) dallas:+0.169(14) miami:+0.065(44) nyc:-0.003(134) seattle:-0.027(40)
+D 00-05Z | mid+poly                                          N=  245 (82Y/163N) pnl/ct=+0.0010 t= 0.0 win=0.67 dailySharpe=0.05 days=291 | atlanta:+0.011(34) chicago:-0.020(35) dallas:-0.015(30) miami:-0.038(39) nyc:+0.003(64) seattle:+0.053(43)
+D 00-05Z | CONTROL mid+own normal fit                        N=  472 (191Y/281N) pnl/ct=+0.0222 t= 1.3 win=0.62 dailySharpe=1.55 days=291 | atlanta:-0.063(43) chicago:+0.051(60) dallas:+0.046(25) miami:+0.093(50) nyc:+0.022(234) seattle:-0.015(60)
+all hours | mid+poly                                         N=  406 (151Y/255N) pnl/ct=+0.0338 t= 1.7 win=0.70 dailySharpe=2.06 days=304 | atlanta:+0.064(53) chicago:+0.024(59) dallas:-0.018(36) miami:+0.009(78) nyc:+0.022(97) seattle:+0.082(83)
+    winter   N= 401 pnl/ct=+0.0334
+    shoulder N=   2 pnl/ct=+0.0750
+    summer   N=   3 pnl/ct=+0.0600
+    mean coef lpx over refits 0.24
+all hours | mid+poly, +2c slippage                           N=  406 (151Y/255N) pnl/ct=+0.0138 t= 0.7 win=0.70 dailySharpe=0.86 days=304 | atlanta:+0.044(53) chicago:+0.004(59) dallas:-0.038(36) miami:-0.011(78) nyc:+0.002(97) seattle:+0.062(83)
+all hours | mid+poly, thr .08                                N=  144 (51Y/93N) pnl/ct=-0.0049 t=-0.1 win=0.63 dailySharpe=-0.18 days=304 | atlanta:+0.016(20) chicago:-0.050(27) dallas:+0.059(18) miami:-0.111(24) nyc:+0.032(37) seattle:+0.041(18)
+all hours | mid+poly, every hour (not first-only)            N= 2082 (952Y/1130N) pnl/ct=-0.0075 t=-0.8 win=0.65 dailySharpe=-0.35 days=304 | atlanta:+0.029(318) chicago:-0.049(377) dallas:-0.045(253) miami:+0.004(424) nyc:-0.006(357) seattle:+0.015(353)
+all hours | CONTROL mid+own normal fit                       N=  658 (268Y/390N) pnl/ct=+0.0193 t= 1.3 win=0.64 dailySharpe=1.62 days=304 | atlanta:-0.038(43) chicago:+0.039(79) dallas:+0.089(28) miami:+0.089(96) nyc:+0.002(316) seattle:-0.004(96)
+
+=== 4. Placebo: Polymarket distribution taken from the SAME city, PREVIOUS target day ===
+placebo (yesterday's Polymarket) all hours                   N=  121 (90Y/31N) pnl/ct=+0.0087 t= 0.2 win=0.59 dailySharpe=0.28 days=270 | atlanta:-0.038(15) chicago:+0.044(22) dallas:-0.335(12) miami:+0.076(21) nyc:+0.009(36) seattle:+0.184(15)
+    placebo lpx coef -0.01

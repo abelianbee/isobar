@@ -1,0 +1,22 @@
+rows 48242 events 629
+['lp', 'lx'] {'const': 0.399, 'lp': 0.598, 'lx': 0.686} z {'const': 4.9, 'lp': 7.0, 'lx': 6.9}
+['lp', 'lo_'] {'const': 0.059, 'lp': 0.076, 'lo_': 0.979} z {'const': 0.9, 'lp': 0.5, 'lo_': 6.0}
+['lp', 'lx', 'lo_'] {'const': 0.351, 'lp': -0.041, 'lx': 0.635, 'lo_': 0.661} z {'const': 4.2, 'lp': -0.3, 'lx': 6.2, 'lo_': 4.3}
+POLY trade | Kalshi-implied  thr=0.03 half-spread=0.01: N=2479 pnl/ct=+0.0327 t= 4.2 win=0.53
+POLY trade | Kalshi-implied  thr=0.03 half-spread=0.02: N=2096 pnl/ct=+0.0323 t= 3.8 win=0.53
+POLY trade | Kalshi-implied  thr=0.05 half-spread=0.01: N=1755 pnl/ct=+0.0458 t= 4.8 win=0.53
+POLY trade | Kalshi-implied  thr=0.05 half-spread=0.02: N=1502 pnl/ct=+0.0471 t= 4.4 win=0.54
+POLY trade | Kalshi-implied  thr=0.08 half-spread=0.01: N=1061 pnl/ct=+0.0744 t= 5.7 win=0.56
+POLY trade | Kalshi-implied  thr=0.08 half-spread=0.02: N= 897 pnl/ct=+0.0731 t= 5.2 win=0.57
+POLY trade | own strip fit   thr=0.03 half-spread=0.01: N=1337 pnl/ct=+0.0133 t= 1.3 win=0.45
+POLY trade | own strip fit   thr=0.03 half-spread=0.02: N= 827 pnl/ct=+0.0146 t= 1.1 win=0.47
+POLY trade | own strip fit   thr=0.05 half-spread=0.01: N= 512 pnl/ct=+0.0194 t= 1.1 win=0.45
+POLY trade | own strip fit   thr=0.05 half-spread=0.02: N= 300 pnl/ct=+0.0206 t= 0.9 win=0.47
+POLY trade | own strip fit   thr=0.08 half-spread=0.01: N= 106 pnl/ct=+0.0709 t= 1.8 win=0.50
+POLY trade | own strip fit   thr=0.08 half-spread=0.02: N=  59 pnl/ct=+0.1031 t= 2.1 win=0.54
+POLY trade | both            thr=0.03 half-spread=0.01: N=2698 pnl/ct=+0.0341 t= 4.6 win=0.52
+POLY trade | both            thr=0.03 half-spread=0.02: N=2329 pnl/ct=+0.0286 t= 3.6 win=0.52
+POLY trade | both            thr=0.05 half-spread=0.01: N=1951 pnl/ct=+0.0422 t= 4.7 win=0.51
+POLY trade | both            thr=0.05 half-spread=0.02: N=1647 pnl/ct=+0.0408 t= 4.1 win=0.51
+POLY trade | both            thr=0.08 half-spread=0.01: N=1192 pnl/ct=+0.0705 t= 5.9 win=0.53
+POLY trade | both            thr=0.08 half-spread=0.02: N= 998 pnl/ct=+0.0784 t= 5.9 win=0.54

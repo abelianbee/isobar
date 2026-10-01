@@ -1,0 +1,172 @@
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+<string>:35: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+models: ['bom_access_global', 'cma_grapes_global', 'dmi_seamless', 'ecmwf_aifs025_single', 'ecmwf_ifs', 'ecmwf_ifs025', 'gem_seamless', 'gfs_graphcast025', 'gfs_seamless', 'icon_seamless', 'jma_seamless', 'kma_seamless', 'knmi_seamless', 'meteofrance_seamless', 'metno_seamless', 'ncep_hrrr_conus', 'ncep_nbm_conus', 'ukmo_seamless']
+LEAD 1
+MODE=w: forecast OOS MAE by station/year:
+year     2023  2024  2025  2026
+station                        
+ATL       NaN   NaN  1.79  1.85
+AUS      2.54  2.55  2.07  1.70
+BOS       NaN   NaN  1.94  1.86
+DCA       NaN   NaN  1.89  2.01
+DEN      3.20  2.98  2.13  1.95
+DFW       NaN   NaN  2.05  1.92
+HOU       NaN   NaN  1.72  2.06
+LAS       NaN   NaN  1.18  1.07
+LAX      2.18  2.42  1.55  1.64
+MDW      2.44  2.33  1.70  1.88
+MIA      1.63  2.02  1.23  1.25
+MSP       NaN   NaN  1.91  1.89
+NYC      1.92  2.78  1.69  1.92
+OKC       NaN   NaN  2.17  2.02
+PHL      2.14  2.21  1.82  1.73
+PHX       NaN   NaN  1.30  1.25
+SEA       NaN   NaN  1.57  1.58
+SFO       NaN   NaN  2.92  1.92
+n models used: year     2023  2024  2025  2026
+station                        
+ATL       NaN   NaN  12.0  13.0
+AUS       1.0   1.0  12.0  13.0
+BOS       NaN   NaN  12.0  13.0
+DCA       NaN   NaN  12.0  13.0
+DEN       1.0   1.0  12.0  13.0
+DFW       NaN   NaN  12.0  13.0
+HOU       NaN   NaN  12.0  13.0
+LAS       NaN   NaN  12.0  13.0
+LAX       1.0   1.0  12.0  13.0
+MDW       1.0   1.0  12.0  13.0
+MIA       1.0   1.0  12.0  13.0
+MSP       NaN   NaN  12.0  13.0
+NYC       1.0   1.0  12.0  13.0
+OKC       NaN   NaN  12.0  13.0
+PHL       1.0   1.0  12.0  13.0
+PHX       NaN   NaN  12.0  13.0
+SEA       NaN   NaN  12.0  13.0
+SFO       NaN   NaN  12.0  13.0
+events 9627 {'ATL': 235, 'AUS': 1206, 'BOS': 233, 'DCA': 250, 'DEN': 651, 'DFW': 228, 'HOU': 228, 'LAS': 256, 'LAX': 603, 'MDW': 1340, 'MIA': 1199, 'MSP': 235, 'NYC': 1337, 'OKC': 228, 'PHL': 651, 'PHX': 235, 'SEA': 256, 'SFO': 256}
+
+events 2025+ with candles+forecasts: {'ATL': 235, 'AUS': 609, 'BOS': 233, 'DCA': 250, 'DEN': 609, 'DFW': 228, 'HOU': 228, 'LAS': 256, 'LAX': 603, 'MDW': 609, 'MIA': 602, 'MSP': 235, 'NYC': 607, 'OKC': 228, 'PHL': 609, 'PHX': 235, 'SEA': 256, 'SFO': 256}
+
+===== h=8 (thr 0.05) OOS events=6651 days=575 | Brier mkt=0.1129 blend=0.1210 comb=0.1111 lpm coef=0.40
+ALL: N=6970 pnl/ct=+0.0489 ROI=+8.2% Sharpe(all days)=7.17 win=0.66
+by station: {'ATL': (-0.022, 174), 'AUS': (0.037, 395), 'BOS': (0.097, 123), 'DCA': (0.025, 245), 'DEN': (0.051, 523), 'DFW': (0.038, 138), 'HOU': (-0.026, 302), 'LAS': (0.101, 411), 'LAX': (0.087, 655), 'MDW': (0.066, 935), 'MIA': (0.023, 842), 'MSP': (0.076, 164), 'NYC': (0.048, 665), 'OKC': (0.037, 131), 'PHL': (0.049, 434), 'PHX': (0.012, 392), 'SEA': (0.076, 351), 'SFO': (0.068, 90)}
+by season : {'Apr,May,Oct': (0.045, 1923), 'Jun-Sep': (0.026, 2646), 'Nov-Mar': (0.077, 2401)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+station                                                        
+ATL          -0.039  -0.042   0.013          43      72      59
+AUS           0.062  -0.003   0.040         144     100     151
+BOS           0.096   0.172  -0.004          41      47      35
+DCA          -0.078  -0.010   0.133          76      73      96
+DEN           0.063   0.001   0.100         137     208     178
+DFW           0.057   0.019   0.044          38      49      51
+HOU          -0.020  -0.065   0.067          73     166      63
+LAS           0.070   0.083   0.136          89     163     159
+LAX           0.069   0.090   0.097         199     187     269
+MDW           0.088   0.031   0.083         273     326     336
+MIA           0.010  -0.000   0.070         199     387     256
+MSP           0.027   0.069   0.120          47      55      62
+NYC           0.032   0.020   0.093         181     263     221
+OKC           0.052  -0.002   0.067          43      48      40
+PHL           0.000   0.091   0.056         138     139     157
+PHX           0.071  -0.003  -0.013          95     170     127
+SEA           0.078   0.072   0.081          89     159     103
+SFO           0.177   0.056   0.028          18      34      38
+by month  : {'2025-03': (0.12, 153), '2025-04': (0.111, 248), '2025-05': (0.047, 293), '2025-06': (0.007, 276), '2025-07': (0.05, 221), '2025-08': (0.132, 175), '2025-09': (-0.062, 173), '2025-10': (0.116, 132), '2025-11': (0.117, 189), '2025-12': (0.105, 281), '2026-01': (0.095, 371), '2026-02': (0.049, 614), '2026-03': (0.062, 793), '2026-04': (0.019, 730), '2026-05': (0.032, 520), '2026-06': (0.019, 498), '2026-07': (0.038, 522), '2026-08': (0.045, 434), '2026-09': (-0.013, 347)}
+WINTER ONLY: N=2401 pnl/ct=+0.0768 Sharpe=12.81 days=182 | by station: {'ATL': (0.013, 59), 'AUS': (0.04, 151), 'BOS': (-0.004, 35), 'DCA': (0.133, 96), 'DEN': (0.1, 178), 'DFW': (0.044, 51), 'HOU': (0.067, 63), 'LAS': (0.136, 159), 'LAX': (0.097, 269), 'MDW': (0.083, 336), 'MIA': (0.07, 256), 'MSP': (0.12, 62), 'NYC': (0.093, 221), 'OKC': (0.067, 40), 'PHL': (0.056, 157), 'PHX': (-0.013, 127), 'SEA': (0.081, 103), 'SFO': (0.028, 38)}
+capacity @10%/cap100: contracts/signal=68, $/city-day=+2.34 => $15,368/yr across 18 cities; winter-only $/city-day=+4.26
+
+===== h=10 (thr 0.05) OOS events=6653 days=575 | Brier mkt=0.1117 blend=0.1210 comb=0.1102 lpm coef=0.38
+ALL: N=5791 pnl/ct=+0.0476 ROI=+7.8% Sharpe(all days)=6.49 win=0.68
+by station: {'ATL': (0.0, 128), 'AUS': (0.034, 316), 'BOS': (0.089, 113), 'DCA': (0.052, 192), 'DEN': (0.052, 452), 'DFW': (0.012, 118), 'HOU': (-0.068, 232), 'LAS': (0.079, 346), 'LAX': (0.084, 513), 'MDW': (0.072, 777), 'MIA': (0.026, 770), 'MSP': (0.069, 136), 'NYC': (0.049, 544), 'OKC': (0.072, 97), 'PHL': (0.061, 308), 'PHX': (-0.003, 349), 'SEA': (0.079, 313), 'SFO': (0.043, 87)}
+by season : {'Apr,May,Oct': (0.042, 1571), 'Jun-Sep': (0.026, 2224), 'Nov-Mar': (0.076, 1996)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+station                                                        
+ATL           0.022  -0.041   0.027          34      48      46
+AUS           0.041   0.040   0.025         113      83     120
+BOS           0.082   0.152   0.021          37      41      35
+DCA          -0.104   0.070   0.148          59      46      87
+DEN           0.054   0.013   0.094         120     173     159
+DFW           0.005   0.039  -0.022          28      54      36
+HOU          -0.046  -0.106   0.027          61     131      40
+LAS           0.037   0.054   0.131          79     139     128
+LAX           0.054   0.069   0.116         151     147     215
+MDW           0.057   0.039   0.113         228     263     286
+MIA           0.013   0.011   0.059         178     366     226
+MSP           0.052   0.040   0.106          35      47      54
+NYC           0.050   0.019   0.084         144     219     181
+OKC           0.073   0.055   0.099          28      43      26
+PHL           0.055   0.094   0.039          93      95     120
+PHX           0.067  -0.017  -0.037          84     155     110
+SEA           0.099   0.057   0.099          81     146      86
+SFO           0.187   0.042  -0.020          18      28      41
+by month  : {'2025-03': (0.117, 134), '2025-04': (0.103, 185), '2025-05': (0.049, 228), '2025-06': (0.012, 246), '2025-07': (0.049, 182), '2025-08': (0.144, 142), '2025-09': (-0.049, 150), '2025-10': (0.079, 119), '2025-11': (0.102, 158), '2025-12': (0.106, 236), '2026-01': (0.098, 296), '2026-02': (0.04, 482), '2026-03': (0.069, 690), '2026-04': (0.022, 597), '2026-05': (0.029, 442), '2026-06': (0.028, 404), '2026-07': (0.038, 430), '2026-08': (0.029, 372), '2026-09': (-0.019, 298)}
+WINTER ONLY: N=1996 pnl/ct=+0.0763 Sharpe=11.95 days=182 | by station: {'ATL': (0.027, 46), 'AUS': (0.025, 120), 'BOS': (0.021, 35), 'DCA': (0.148, 87), 'DEN': (0.094, 159), 'DFW': (-0.022, 36), 'HOU': (0.027, 40), 'LAS': (0.131, 128), 'LAX': (0.116, 215), 'MDW': (0.113, 286), 'MIA': (0.059, 226), 'MSP': (0.106, 54), 'NYC': (0.084, 181), 'OKC': (0.099, 26), 'PHL': (0.039, 120), 'PHX': (-0.037, 110), 'SEA': (0.099, 86), 'SFO': (-0.02, 41)}
+capacity @10%/cap100: contracts/signal=74, $/city-day=+2.11 => $13,856/yr across 18 cities; winter-only $/city-day=+3.92
+
+===== h=12 (thr 0.05) OOS events=6651 days=575 | Brier mkt=0.1104 blend=0.1212 comb=0.1092 lpm coef=0.33
+ALL: N=4752 pnl/ct=+0.0435 ROI=+6.9% Sharpe(all days)=5.36 win=0.69
+by station: {'ATL': (-0.028, 82), 'AUS': (0.04, 281), 'BOS': (0.114, 105), 'DCA': (0.061, 167), 'DEN': (0.059, 366), 'DFW': (-0.005, 94), 'HOU': (-0.09, 185), 'LAS': (0.065, 306), 'LAX': (0.068, 403), 'MDW': (0.066, 614), 'MIA': (0.022, 699), 'MSP': (0.087, 110), 'NYC': (0.048, 412), 'OKC': (0.054, 82), 'PHL': (0.057, 218), 'PHX': (-0.004, 325), 'SEA': (0.068, 237), 'SFO': (0.109, 66)}
+by season : {'Apr,May,Oct': (0.032, 1301), 'Jun-Sep': (0.026, 1812), 'Nov-Mar': (0.072, 1639)}
+by station x season:
+               mean                        size                
+season  Apr,May,Oct Jun-Sep Nov-Mar Apr,May,Oct Jun-Sep Nov-Mar
+station                                                        
+ATL          -0.100  -0.019   0.015          20      37      25
+AUS           0.033   0.057   0.037          99      65     117
+BOS           0.076   0.176   0.083          33      38      34
+DCA          -0.037   0.062   0.139          55      44      68
+DEN           0.050   0.027   0.098          96     135     135
+DFW          -0.041  -0.003   0.017          21      42      31
+HOU          -0.060  -0.111  -0.056          46     111      28
+LAS           0.039   0.032   0.117          70     123     113
+LAX           0.028   0.075   0.092         116     119     168
+MDW           0.062   0.045   0.087         184     194     236
+MIA           0.003   0.004   0.067         162     334     203
+MSP           0.059   0.086   0.111          31      40      39
+NYC           0.005   0.035   0.096         113     160     139
+OKC           0.046   0.060   0.047          19      40      23
+PHL           0.014   0.096   0.060          67      69      82
+PHX           0.082  -0.022  -0.051          84     142      99
+SEA           0.099   0.040   0.078          69     102      66
+SFO           0.179   0.089   0.086          16      17      33
+by month  : {'2025-03': (0.145, 96), '2025-04': (0.089, 156), '2025-05': (0.023, 172), '2025-06': (0.039, 182), '2025-07': (0.066, 146), '2025-08': (0.156, 112), '2025-09': (-0.024, 135), '2025-10': (0.056, 83), '2025-11': (0.122, 141), '2025-12': (0.093, 199), '2026-01': (0.097, 236), '2026-02': (0.039, 406), '2026-03': (0.054, 561), '2026-04': (0.016, 515), '2026-05': (0.028, 375), '2026-06': (0.012, 345), '2026-07': (0.037, 374), '2026-08': (0.022, 284), '2026-09': (-0.034, 234)}
+WINTER ONLY: N=1639 pnl/ct=+0.0723 Sharpe=10.74 days=182 | by station: {'ATL': (0.015, 25), 'AUS': (0.037, 117), 'BOS': (0.083, 34), 'DCA': (0.139, 68), 'DEN': (0.098, 135), 'DFW': (0.017, 31), 'HOU': (-0.056, 28), 'LAS': (0.117, 113), 'LAX': (0.092, 168), 'MDW': (0.087, 236), 'MIA': (0.067, 203), 'MSP': (0.111, 39), 'NYC': (0.096, 139), 'OKC': (0.047, 23), 'PHL': (0.06, 82), 'PHX': (-0.051, 99), 'SEA': (0.078, 66), 'SFO': (0.086, 33)}
+capacity @10%/cap100: contracts/signal=77, $/city-day=+1.59 => $10,475/yr across 18 cities; winter-only $/city-day=+3.14

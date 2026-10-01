@@ -1,0 +1,11 @@
+{"ec_pct":"2.7","half_life":"25","is_range":"0.74–0.81","settle_dis":"16",
+ "aP":"+0.027","aP_t":"12.6","aK":"+0.016","aK_t":"6.6","gg":"0.63",
+ "out_k":"0.48","out_p":"0.78",
+ "mf":"+2.7¢ (t=2.1, N=1,060); Miami +8.0¢, Atlanta and Seattle ≈ 0",
+ "rev":"−3.7¢ (t=−3.2, N=1,264)",
+ "hs5":"+3.8¢ (t=3.4, N=1,467)",
+ "delay":"+3.5¢ (t=4.2, N=2,502)",
+ "incr":"+3.5¢ (t=3.6, N=1,796)",
+ "plA":"−0.7¢, coefficient 0.00",
+ "plC":"+1.9¢ (t=0.9), coefficient 0.04",
+ "caveat":"Caveats. Six US cities, Mar 2025–Sep 2026; most trades are New York and Miami. The out-of-sample half is smaller than the development half (+2.9¢ vs +4.7¢ per contract) and is nearly all shoulder and summer months; Atlanta and Dallas are flat to negative. On identical contracts Kalshi leads clearly in Miami but the two venues are close to symmetric in Atlanta and Seattle, where Kalshi's own markets are thin. Cost model: Polymarket midpoint plus a 2¢ half-spread (live books show 1–3¢ spreads with hundreds to a few thousand contracts within 2¢ of the touch). About 6 signals a day; the median signalled bracket trades $10k over its life, so realistic capacity is tens of thousands of dollars a year at a few percent of bracket volume, similar in order to the Kalshi blend edge."}

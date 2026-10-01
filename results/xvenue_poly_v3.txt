@@ -1,0 +1,136 @@
+psum distribution (raw strip sum): {'mean': 1.03, '25%': 0.994, '50%': 1.028, '75%': 1.066}
+
+=== RAW-price execution (the honest number), hs=2c ===
+lp+lx thr 0.05 exec at NORMALISED price (as before)     N= 1426 pnl/ct=+0.0462 sd=0.407 t= 4.3 win=0.55 dSharpe(all days)=3.73 ROI=+0.092
+lp+lx thr 0.05 exec at RAW price                        N= 1522 pnl/ct=+0.0455 sd=0.409 t= 4.3 win=0.57 dSharpe(all days)=3.93 ROI=+0.086
+lp+lx+lpm thr 0.05 exec at RAW price                    N= 1669 pnl/ct=+0.0540 sd=0.399 t= 5.5 win=0.59 dSharpe(all days)=4.83 ROI=+0.102
+lp+lx thr 0.08 exec at NORMALISED price (as before)     N=  857 pnl/ct=+0.0818 sd=0.422 t= 5.7 win=0.58 dSharpe(all days)=4.66 ROI=+0.165
+lp+lx thr 0.08 exec at RAW price                        N=  958 pnl/ct=+0.0752 sd=0.429 t= 5.4 win=0.60 dSharpe(all days)=4.66 ROI=+0.144
+lp+lx+lpm thr 0.08 exec at RAW price                    N= 1158 pnl/ct=+0.0719 sd=0.416 t= 5.9 win=0.58 dSharpe(all days)=5.00 ROI=+0.141
+
+=== lp+lx thr .05 hs 2c raw: breakdowns ===
+by side:
+        mean  size
+side              
+N     0.0428   902
+Y     0.0495   620
+by season x hour block:
+            mean                       size                   
+blk      22Z-03Z D 04-06Z D-1 <=21Z 22Z-03Z D 04-06Z D-1 <=21Z
+season                                                        
+shoulder  0.0193   0.0895    0.0958      47       26        85
+summer    0.0379  -0.0104    0.0116      81       46       169
+winter    0.0008  -0.0436    0.0747     190      105       773
+by Kalshi hours-since-open h:
+hb      (0, 1]    (1, 2]    (2, 4]    (4, 8]   (8, 12]  (12, 20]
+mean    0.0754    0.0313    0.0609    0.0517    0.0084   -0.0078
+size  509.0000  144.0000  173.0000  303.0000  197.0000  196.0000
+by month:
+month  2025-05  2025-06  2025-07  2025-08  2025-09  2025-10  2025-11  2025-12  2026-01  2026-02  2026-03
+mean     0.109    0.074   -0.073    0.083    -0.02    0.024    0.013    0.056    0.066    0.035    0.066
+size    89.000   77.000   76.000   70.000    73.00   69.000   76.000   65.000  164.000  401.000  362.000
+sum      9.714    5.722   -5.512    5.794    -1.46    1.664    1.005    3.628   10.839   14.013   23.846
+by city x season:
+            mean                     size              
+season  shoulder  summer  winter shoulder summer winter
+city                                                   
+atlanta      NaN     NaN  0.0152      NaN    NaN  128.0
+chicago      NaN     NaN  0.0612      NaN    NaN  126.0
+dallas       NaN     NaN -0.0519      NaN    NaN   63.0
+miami        NaN     NaN  0.0910      NaN    NaN  217.0
+nyc        0.072  0.0154  0.0502    158.0  296.0  359.0
+seattle      NaN     NaN  0.0525      NaN    NaN  175.0
+by model edge bin:
+eb    (0.05, 0.07]  (0.07, 0.1]  (0.1, 0.15]  (0.15, 0.25]  (0.25, 1.0]
+mean        0.0319       0.0207       0.0734        0.1541       0.2107
+size      744.0000     437.0000     216.0000      101.0000      24.0000
+by Poly price level:
+pb    (0.0, 0.05]  (0.05, 0.15]  (0.15, 0.3]  (0.3, 0.5]  (0.5, 0.7]  (0.7, 0.85]  (0.85, 1.0]
+mean       0.0578        0.0334       0.0653      0.0298      0.0397       0.2053      -0.0531
+size      63.0000      300.0000     491.0000    537.0000    106.0000      18.0000       7.0000
+mean refit coefs: lx 0.89 lp 0.47
+
+=== exit after k hours at Poly price (pay hs again) vs hold to settlement ===
+k= 3h: N=1174 exit pnl/ct=-0.0149 (t=-7.7) vs hold +0.0605
+k= 6h: N=1021 exit pnl/ct=+0.0006 (t=0.2) vs hold +0.0625
+k=12h: N=683 exit pnl/ct=+0.0100 (t=2.5) vs hold +0.0666
+
+=== placebos ===
+placebo A: Kalshi of previous day                       N=  243 pnl/ct=-0.0154 sd=0.490 t=-0.5 win=0.55 dSharpe(all days)=-0.60 ROI=-0.027
+   lx coef -0.01
+placebo B: Kalshi 6h stale (same day)                   N=  834 pnl/ct=+0.0447 sd=0.428 t= 3.0 win=0.57 dSharpe(all days)=2.90 ROI=+0.085
+   lx coef 0.7
+Traceback (most recent call last):
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_poly3.py", line 72, in <module>
+    tw=wf(W,['lp','lx']); rep(signals(tw,0.05,0.02,'p'),'placebo C: Kalshi shuffled across days'); print('   lx coef',round(tw.b_lx.mean(),2))
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_poly3.py", line 15, in wf
+    return pd.concat(out)
+           ~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/reshape/concat.py", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/reshape/concat.py", line 808, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+=== placebos ===
+placebo A: Kalshi of previous day                       N=  243 pnl/ct=-0.0154 sd=0.490 t=-0.5 win=0.55 dSharpe(all days)=-0.60 ROI=-0.027
+   lx coef -0.01
+placebo B: Kalshi 6h stale (same day)                   N=  834 pnl/ct=+0.0447 sd=0.428 t= 3.0 win=0.57 dSharpe(all days)=2.90 ROI=+0.085
+   lx coef 0.7
+Traceback (most recent call last):
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_poly3.py", line 74, in <module>
+    tw=wf(W,['lp','lx']); rep(signals(tw,0.05,0.02,'p'),'placebo C: Kalshi shuffled across days'); print('   lx coef',round(tw.b_lx.mean(),2))
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_poly3.py", line 15, in wf
+    return pd.concat(out)
+           ~~~~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/reshape/concat.py", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/reshape/concat.py", line 808, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+placebo C: Kalshi shuffled across days                  N=  292 pnl/ct=-0.0282 sd=0.482 t=-1.0 win=0.53 dSharpe(all days)=-1.19 ROI=-0.050
+   lx coef 0.0 rows 39558
+
+=== capacity proxy: Polymarket total $ volume of signalled brackets ===
+{'25%': 2252.0, '50%': 7163.0, '75%': 17146.0} signals/day 5.14 days 296
+signals/day by city: {'atlanta': 2.84, 'chicago': 2.29, 'dallas': 1.91, 'miami': 3.39, 'nyc': 2.77, 'seattle': 2.61}
+Traceback (most recent call last):
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_poly3.py", line 79, in <module>
+    A.to_parquet(R+'kalshi/xvenue_trades_v3.parquet')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/core/frame.py", line 3135, in to_parquet
+    return to_parquet(
+        self,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parquet.py", line 490, in to_parquet
+    impl.write(
+    ~~~~~~~~~~^
+        df,
+        ^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parquet.py", line 229, in write
+    self.api.parquet.write_table(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        table,
+        ^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyarrow/parquet/core.py", line 2015, in write_table
+    writer.write_table(table, row_group_size=row_group_size)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyarrow/parquet/core.py", line 1180, in write_table
+    self.writer.write_table(table, row_group_size=row_group_size)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_parquet.pyx", line 2397, in pyarrow._parquet.ParquetWriter.write_table
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowNotImplementedError: Unsupported cast from dictionary<values=extension<pandas.interval<ArrowIntervalType>>, indices=int8, ordered=1> to struct using function cast_struct

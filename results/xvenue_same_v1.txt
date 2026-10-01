@@ -1,0 +1,71 @@
+identical-contract rows 4408 events 87 {'atlanta': 20, 'miami': 34, 'seattle': 33} brackets/event 3.61
+settlement disagreement on identical brackets: 13.462% of 312 brackets; events with any disagreement: 26.437%
+mean |Kalshi mid - Poly mid|: 0.0714  median Kalshi spread 0.010000000000000009  corr(mid,p) 0.795
+
+=== error-correction / information shares (identical contracts, hourly) ===
+all        n=  3625 | Poly->Kalshi speed +0.056/h (t=10.3) | Kalshi->Poly speed +0.017/h (t= 2.8) | GG share Kalshi 0.77 | Hasbrouck IS Kalshi [0.87,0.91] | corr(dK,dP) 0.03 | Poly half-life 12.0h
+miami      n=  1378 | Poly->Kalshi speed +0.052/h (t= 6.8) | Kalshi->Poly speed -0.005/h (t=-0.6) | GG share Kalshi 1.10 | Hasbrouck IS Kalshi [0.99,1.00] | corr(dK,dP) 0.02 | Poly half-life 12.9h
+atlanta    n=   855 | Poly->Kalshi speed +0.106/h (t= 5.5) | Kalshi->Poly speed +0.031/h (t= 2.2) | GG share Kalshi 0.77 | Hasbrouck IS Kalshi [0.82,0.92] | corr(dK,dP) 0.08 | Poly half-life 6.2h
+seattle    n=  1392 | Poly->Kalshi speed +0.044/h (t= 5.6) | Kalshi->Poly speed +0.046/h (t= 5.2) | GG share Kalshi 0.49 | Hasbrouck IS Kalshi [0.41,0.48] | corr(dK,dP) 0.02 | Poly half-life 15.4h
+h<=8       n=  1835 | Poly->Kalshi speed +0.071/h (t= 8.1) | Kalshi->Poly speed +0.012/h (t= 1.5) | GG share Kalshi 0.86 | Hasbrouck IS Kalshi [0.94,0.97] | corr(dK,dP) 0.03 | Poly half-life 9.4h
+h>8        n=  1790 | Poly->Kalshi speed +0.041/h (t= 6.3) | Kalshi->Poly speed +0.022/h (t= 2.8) | GG share Kalshi 0.65 | Hasbrouck IS Kalshi [0.74,0.80] | corr(dK,dP) 0.04 | Poly half-life 16.5h
+
+=== which venue predicts the outcome? logit(y) ~ logit(p_K) + logit(p_P), event-clustered ===
+all     n=  4408 Kalshi 1.11 (z=4.1)  Poly 0.55 (z=2.0) | Brier Kalshi 0.1326 Poly 0.1390
+h<=8    n=  2235 Kalshi 1.26 (z=4.2)  Poly 0.49 (z=1.6) | Brier Kalshi 0.1343 Poly 0.1410
+h 9-16  n=  2173 Kalshi 0.97 (z=3.5)  Poly 0.62 (z=2.3) | Brier Kalshi 0.1309 Poly 0.1369
+Traceback (most recent call last):
+  File "/Users/abebraham/Desktop/resume/edge/scripts/xvenue_same.py", line 46, in <module>
+    m=sm.Logit(s.y_p,sm.add_constant(s[['lk','lp']])).fit(disp=0,cov_type='cluster',cov_kwds={'groups':pd.factorize(s.ticker)[0]})
+      ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/discrete/discrete_model.py", line 543, in __init__
+    super().__init__(endog, exog, offset=offset, check_rank=check_rank, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/discrete/discrete_model.py", line 200, in __init__
+    super().__init__(endog, exog, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/model.py", line 287, in __init__
+    super().__init__(endog, exog, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/model.py", line 102, in __init__
+    self.data = self._handle_data(endog, exog, missing, hasconst, **kwargs)
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/model.py", line 143, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/data.py", line 747, in handle_data
+    return klass(endog, exog=exog, missing=missing, hasconst=hasconst, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/data.py", line 90, in __init__
+    self._handle_constant(hasconst)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/statsmodels/base/data.py", line 137, in _handle_constant
+    exog_max = np.max(self.exog, axis=0)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/numpy/_core/fromnumeric.py", line 3123, in max
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+                          keepdims=keepdims, initial=initial, where=where)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/numpy/_core/fromnumeric.py", line 83, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity
+=== which venue predicts the outcome? logit(y) ~ logit(p_K) + logit(p_P), event-clustered ===
+all     n=  4408 Kalshi 1.11 (z=4.1)  Poly 0.55 (z=2.0) | Brier Kalshi 0.1326 Poly 0.1390
+h<=8    n=  2235 Kalshi 1.26 (z=4.2)  Poly 0.49 (z=1.6) | Brier Kalshi 0.1343 Poly 0.1410
+h 9-16  n=  2173 Kalshi 0.97 (z=3.5)  Poly 0.62 (z=2.3) | Brier Kalshi 0.1309 Poly 0.1369
+
+=== model-free laggard trade: buy Polymarket toward Kalshi mid when |Kalshi mid - Poly mid| > thr; cost = Poly mid + hs; hold to settlement ===
+Poly toward Kalshi                 thr=0.05 hs=0.01 N= 334 pnl/ct=+0.0459 t= 2.1 win=0.51 dSharpe=5.55 | atlanta:+0.008(82) miami:+0.102(120) seattle:+0.018(132)
+Poly toward Kalshi                 thr=0.05 hs=0.02 N= 334 pnl/ct=+0.0359 t= 1.6 win=0.51 dSharpe=4.38 | atlanta:-0.002(82) miami:+0.092(120) seattle:+0.008(132)
+Poly toward Kalshi                 thr=0.05 hs=0.03 N= 334 pnl/ct=+0.0259 t= 1.2 win=0.51 dSharpe=3.18 | atlanta:-0.012(82) miami:+0.082(120) seattle:-0.002(132)
+Poly toward Kalshi                 thr=0.05 hs=0.02 DELAY1h N= 325 pnl/ct=+0.0308 t= 1.4 win=0.51 dSharpe=3.55 | atlanta:+0.002(78) miami:+0.086(119) seattle:-0.002(128)
+Poly toward Kalshi, h<=8 only      thr=0.05 hs=0.02 N= 273 pnl/ct=+0.0537 t= 2.2 win=0.53 dSharpe=5.39 | atlanta:+0.031(62) miami:+0.101(103) seattle:+0.022(108)
+Poly toward Kalshi                 thr=0.08 hs=0.01 N= 257 pnl/ct=+0.0859 t= 3.4 win=0.54 dSharpe=7.59 | atlanta:+0.050(56) miami:+0.156(100) seattle:+0.036(101)
+Poly toward Kalshi                 thr=0.08 hs=0.02 N= 257 pnl/ct=+0.0759 t= 3.0 win=0.54 dSharpe=6.76 | atlanta:+0.040(56) miami:+0.146(100) seattle:+0.026(101)
+Poly toward Kalshi                 thr=0.08 hs=0.03 N= 257 pnl/ct=+0.0659 t= 2.6 win=0.54 dSharpe=5.91 | atlanta:+0.030(56) miami:+0.136(100) seattle:+0.016(101)
+Poly toward Kalshi                 thr=0.08 hs=0.02 DELAY1h N= 253 pnl/ct=+0.0685 t= 2.7 win=0.54 dSharpe=6.05 | atlanta:+0.020(54) miami:+0.133(100) seattle:+0.030(99)
+Poly toward Kalshi, h<=8 only      thr=0.08 hs=0.02 N= 211 pnl/ct=+0.0750 t= 2.7 win=0.55 dSharpe=5.93 | atlanta:+0.011(46) miami:+0.161(86) seattle:+0.019(79)
+Poly toward Kalshi                 thr=0.12 hs=0.01 N= 163 pnl/ct=+0.1196 t= 3.6 win=0.56 dSharpe=7.24 | atlanta:+0.052(27) miami:+0.170(79) seattle:+0.082(57)
+Poly toward Kalshi                 thr=0.12 hs=0.02 N= 163 pnl/ct=+0.1096 t= 3.3 win=0.56 dSharpe=6.69 | atlanta:+0.042(27) miami:+0.160(79) seattle:+0.072(57)
+Poly toward Kalshi                 thr=0.12 hs=0.03 N= 163 pnl/ct=+0.0996 t= 3.0 win=0.56 dSharpe=6.13 | atlanta:+0.032(27) miami:+0.150(79) seattle:+0.062(57)
+Poly toward Kalshi                 thr=0.12 hs=0.02 DELAY1h N= 158 pnl/ct=+0.1042 t= 3.1 win=0.57 dSharpe=6.35 | atlanta:+0.024(26) miami:+0.151(77) seattle:+0.076(55)
+Poly toward Kalshi, h<=8 only      thr=0.12 hs=0.02 N= 124 pnl/ct=+0.1294 t= 3.4 win=0.59 dSharpe=7.23 | atlanta:+0.105(23) miami:+0.166(58) seattle:+0.093(43)
+REVERSE Kalshi toward Poly (taker+fee)  thr=0.05 N= 296 pnl/ct=-0.0454 t=-2.0
+REVERSE Kalshi toward Poly (taker+fee)  thr=0.08 N= 225 pnl/ct=-0.0489 t=-1.9

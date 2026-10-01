@@ -1,0 +1,198 @@
+{
+ "built_utc": "2026-10-01T05:35:25.570410+00:00",
+ "env": {
+  "python": "3.14.4",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "pandas": "3.0.2",
+  "numpy": "2.4.4",
+  "statsmodels": "0.15.0",
+  "scipy": "1.17.1",
+  "sklearn": "1.8.0",
+  "built_utc": "2026-10-01T05:35:26.252019+00:00"
+ },
+ "inputs": [
+  {
+   "path": "data/weather/candles_ev.parquet",
+   "kind": "file",
+   "bytes": 41399254,
+   "sha256": "38cd2b6cfa30fcbf9d5294f65abc3e8cc3da7aacf6ffaf7024dcf07989bcf560",
+   "mtime": "2026-09-28T05:26:11.394458+00:00"
+  },
+  {
+   "path": "data/weather/fcst_daily.parquet",
+   "kind": "file",
+   "bytes": 3339619,
+   "sha256": "2e63e4457fda217628c7220a6e8161ec53f5dd92f287428c519ad2f6b1e32d2f",
+   "mtime": "2026-09-28T02:26:40.411857+00:00"
+  },
+  {
+   "path": "data/weather/cli_daily.parquet",
+   "kind": "file",
+   "bytes": 157803,
+   "sha256": "612b664f5f5acc5c4c595b141954a9faf6ce464ce02f2af08d50c23adf54c9c6",
+   "mtime": "2026-09-28T02:25:33.288174+00:00"
+  },
+  {
+   "path": "data/weather/events.parquet",
+   "kind": "file",
+   "bytes": 1171540,
+   "sha256": "dbe0e0ab5824ab69a4d6a3791a63e4b17100d1e99dc323f729f577f55e13aabd",
+   "mtime": "2026-09-28T05:26:01.477747+00:00"
+  },
+  {
+   "path": "data/kalshi/brackets.parquet",
+   "kind": "file",
+   "bytes": 930598,
+   "sha256": "e4bf321d62101464f852e1bca60c2b1e7247848312df56a84b1c9702bba2b0c0",
+   "mtime": "2026-09-28T05:26:01.749447+00:00"
+  },
+  {
+   "path": "data/kalshi/exclusions.parquet",
+   "kind": "file",
+   "bytes": 37145,
+   "sha256": "af6e46f12b39dd0f3a82c1b5430ec31e2e745ea88640c16c464ad0177486a7cb",
+   "mtime": "2026-09-28T05:26:01.773783+00:00"
+  },
+  {
+   "path": "data/kalshi/xvenue_panel.parquet",
+   "kind": "file",
+   "bytes": 9837102,
+   "sha256": "2a80525725783ffc1b066692b598ba97473bf304bc9692014d09193a8b40ccb6",
+   "mtime": "2026-09-28T05:33:32.319296+00:00"
+  },
+  {
+   "path": "data/kalshi/xvenue_panel_poly.parquet",
+   "kind": "file",
+   "bytes": 4874885,
+   "sha256": "413ad727c83a97852a0591a667c0a0b8ae2ff4e84759693a81dbdb878a8cb56c",
+   "mtime": "2026-09-28T05:33:32.496704+00:00"
+  },
+  {
+   "path": "data/kalshi/xvenue_poly_scored.parquet",
+   "kind": "file",
+   "bytes": 7872065,
+   "sha256": "90e7619250a6bca17bc913958ecec09884188b5cb4bb6ae1286037e21c53adbb",
+   "mtime": "2026-09-28T05:33:38.239387+00:00"
+  },
+  {
+   "path": "data/kalshi/candles_long.parquet",
+   "kind": "file",
+   "bytes": 37240288,
+   "sha256": "27813573a72df07237aa7caf19c19e9b30cab4957f231bc7f9388fbeb03dd598",
+   "mtime": "2026-09-28T03:54:12.256603+00:00"
+  },
+  {
+   "path": "data/kalshi/poly_prices",
+   "kind": "dir",
+   "n_files": 2606,
+   "bytes": 52642898,
+   "sha256_of_names_and_sizes": "f24095acef7224362aa6babdac54cee50f9818e03b296f3f4a40fb05220e8969"
+  },
+  {
+   "path": "data/kalshi/candles",
+   "kind": "dir",
+   "n_files": 92609,
+   "bytes": 1130720489,
+   "sha256_of_names_and_sizes": "defbdcd8736fa13c15fee389c7c286bf3077e7d8e30446d00241a5553a7a25f5"
+  }
+ ],
+ "ranges": {
+  "candles_ev": {
+   "rows": 2356183,
+   "first": "2021-08-06",
+   "last": "2026-09-26"
+  },
+  "fcst_daily": {
+   "rows": 1116360,
+   "first": "2021-08-01",
+   "last": "2026-09-27"
+  },
+  "cli_daily": {
+   "rows": 34839,
+   "first": "2021-01-01",
+   "last": "2026-09-27"
+  },
+  "xvenue_poly_scored": {
+   "rows": 153591,
+   "first": "2025-02-01",
+   "last": "2026-09-26"
+  }
+ },
+ "sources": {
+  "kalshi": "https://api.elections.kalshi.com/trade-api/v2 (historical markets, candlesticks)",
+  "polymarket": "gamma-api.polymarket.com events + clob.polymarket.com prices-history (midpoint, fidelity 60)",
+  "forecasts": "Open-Meteo previous-runs archive (previous_day1..3) and single-run API",
+  "truth": "NWS CLI via Iowa Environmental Mesonet; ASOS daily where no CLI"
+ },
+ "commands": [
+  "zsh scripts/rebuild.sh",
+  "python3 scripts/xvenue_build.py && python3 scripts/xvenue_poly2.py",
+  "python3 scripts/build_release.py"
+ ],
+ "code_sha256": {
+  "build_cli.py": "e718467e885c5bd0df0ffe6c4ba1dcc3da44c00a93130c09c7aca2507a551038",
+  "build_release.py": "e56235a3adc37bbb13c7c3646439caf8b7dcadc2b393b0f0befeaec08039b2a6",
+  "build_tennis.py": "690c5acc497b04e4bfdb88ecca90e0660c63a05e71a3e188a77901192a924adf",
+  "build_weather.py": "388a45543551f12db96111ada5d6e72c109ee7513b22e7198e10ae7507b1896a",
+  "build_weather2.py": "c13832d925ddca0b754e44b5439849e5c93f1b49a4ff62a1d4aef3860445ff33",
+  "edge_lib.py": "f993547d11aa98fb41f75e3e999f4810a143257cb18098c2915d208e841879f3",
+  "join_tml.py": "a57b02137de1ce7843e75f77c0287504b2a03cc1dbef6dc50e18c8c24c792df5",
+  "kalshi_candles.py": "b532057d01bb570efe9962b6efdac1c0873ce91f960557c46bd140c081a925d2",
+  "kalshi_candles2.py": "8cf69c06de613ea8a9bcb46c7fb8ef68cec25a047a6a143706cf47cea1eaf0f8",
+  "kalshi_candles3.py": "4f13b8140dfa2a135c245ea0a72d222c56576f66f12221405668252cc21a045c",
+  "kalshi_candles_generic.py": "cef372467aab938df65c3d564bdb224a8be6bffe2cc96781b81387c81ed2dcfb",
+  "kalshi_download.py": "9bec6cf5a457b295ec7d2b7d9e36f5197c385a7018b74052ea1aab1b4f4b7b42",
+  "kalshi_list_markets.py": "19ddfed35c79175847684dcadcef35d0db77bcf908fe28485d48983d817efd8a",
+  "live_signal.py": "5efd4e09d3780c283d2e6ddcb4e1b1b73d2127ec7f9baa998c6d937dd7fd11c4",
+  "make_figures.py": "49e8b4ffdca2d463745dd1489c4102ecf149fee1ebc29b904992811ace75768a",
+  "nba_h13.py": "8b56005f0df2026c14b2aebdc30d2d6563cf9933c4ac3cfd8a98a209f9835176",
+  "openmeteo_download.py": "4af0b0cdbb07752be9e9000c9d1ad4cbfb8d098c3b9d644d662599c9027cdc93",
+  "openmeteo_download2.py": "1355d9748557a90776ec5b5a6e9db44aa3490774a69075aefed85005a30a4502",
+  "openmeteo_download3.py": "1f104fbad97278fd6fcbd4b588914045ad5b93c61084d45f9aa2d1ff7c767e84",
+  "openmeteo_runs.py": "77a1571c27cb973dc3112e102c2bcf3516663295467ed2bd55eb11945499ca96",
+  "openmeteo_runs06.py": "6a5e06ca74585937a6f5fc8bdb48c3775b2ad6b589e7855456c25511ea92c81c",
+  "parse_candles.py": "0a15cfe61b83049562f5b5c61dcd858f9715cef9819eca7a74e426e338cf147d",
+  "poly_edge.py": "7ec5da75612a50d2e2faed2a252cff8d9a4772af3b36341cad1ffe8d68839f94",
+  "poly_enum.py": "14826341211a1d1454c06894e383ff2d96cdebb38e6a9058713452563b5d6060",
+  "poly_extend.py": "9713d59f8f5baf20bc3dbfbd3eabad81161beb02e84b95866143cff48060357e",
+  "poly_prices.py": "fc0a70ad76101a86d249258a05a117ed68d730bda755530b62fb61667d890cfd",
+  "release_weather.py": "026a6ec429451c8e0e66dbfca6db8e76bb958c4a68ecdc4e40029485af165c14",
+  "release_xvenue.py": "ea33ce0a7f31e9a9ea78b624a66d1c69aa288a255f2558836cdf708b64ea5e7f",
+  "stress.py": "843c740b8b728731cb7818b8adeebb9ae33da0a9067078cc075706701fe8b741",
+  "stress_halves.py": "9541fcf456ce78dd4154f7fafba92906f4daee2666754dd92be55c0d928e382c",
+  "tennis_antielo.py": "381efee4c8f7436627c5504ad718b7a452f84fc53b0cac5c02fae6385ace4421",
+  "tennis_elo.py": "7df28805e3b651382ef2791ba2dfaecd641f64e2f0ed923d4d7d0d2ae1978f34",
+  "tennis_h10.py": "185aaa30b19369d7f6b5d6f75d756ffdae0d16cba7e08e08c1d762e70f885421",
+  "tennis_h6.py": "5602a81ee6fad30f5cfa03533ec5f1413bed37fe706dd83f770e43530f804387",
+  "tennis_h6b.py": "3bda276f76e2389c6265f375e365e13f8b865d81c09bca224501629c93ce2a9f",
+  "tennis_h8.py": "40d596c05fa9afb227e2ab731d039ba784e9ae9895d57afa3673dd104a907dbb",
+  "tennis_wta.py": "6f309c1cd6b789f4e158e389e691f263f1159c7a8c78bde8e449637b646a359c",
+  "weather_behav.py": "20d52d6c2a87d560977a0e3f87c8009d77657483ac04bdfce5dc6da1ee2e8d5e",
+  "weather_bracket_react.py": "c210f21f99916758ec643d5ab28ee13a1b47b6444e0e4f2438af204d9e82d9d0",
+  "weather_combine.py": "7cd50d7cdc4f71c9ebc3e7120c500f8665214e14a90b8fd68ef4d8a253ef6c5f",
+  "weather_core.py": "187f3dfcdfdc0c75718835bf319057c261448ffaf2408ba46b8cbef9616727cb",
+  "weather_edge.py": "50646a57289ca9422d4452da277340a5321ee53cec43125b7910dbe4f549cd4e",
+  "weather_edge2.py": "45255f67072409508161abcfd8292fdb125c9f5b67e1e8387accb41b27283b70",
+  "weather_edge_diag.py": "94ba46f9982750054bf5f2d63a4e1bff624059cf8b57ae5d001653e3082f326a",
+  "weather_final.py": "f92fb00ed823152fe7011d9b7e6594961c2a8f31a96ae75e186632b3e0e66649",
+  "weather_final_low.py": "21e3e3f26f44f3a80875df7fbb09bbb1b4262d73bc4f4a7a14365a972e661258",
+  "weather_h0.py": "a6613dc20c2406f4a1a5cd94220f78b7ac5fb7f3fcd252c69c95322b472a7426",
+  "weather_h0_fair.py": "8c279825ce8a2c423f8198b4c4ec2c3f66ed3fb5bc62ef8d42e70f92a635e227",
+  "weather_mech.py": "99638bb3726c80e9e52955c8ab0c9ad8062d321cfcb1be253bb440da8ac37095",
+  "weather_obsmodel.py": "3e05e16da960391439886f6c6898edc4d43603212134b003f4563953a8f34af8",
+  "weather_pure.py": "5de6463ccb92834ce7cb92e7383d56cf93f52b4a920cde1e08ee3719ff0ee8c5",
+  "weather_runmax.py": "b87008b9cce271c308d49aea69f4e6e9b313b636666e253d44459112407a11b5",
+  "weather_runs_edge.py": "9bcf624e9d6192c3506faa2f08c1fd3d19b948bd4728feb5ecd3623a786c575c",
+  "weather_runs_edge06.py": "dbbf2b38d4ea14bfbd253780575ca7f909424b0de319698143cd1dedaf76e936",
+  "weather_snap.py": "a5bc2473227c8f982e0dae2e71d69906e0f799a5195cb4db43f7584f9d0711f7",
+  "weather_spreadskill.py": "09e4ff5afae88237c2e737e79ef09f56b3d0f84ab586bd97b1286302e00c9116",
+  "weather_underreact.py": "470f37fd264deb46c78dd595c21962af130879f6240892dd409858a50680a699",
+  "xvenue_build.py": "6dae1f4423f136ab8a1b2d213efea3f1542abc0528b06f11ac12d2fbd969b58e",
+  "xvenue_final.py": "633c6d8c515718eccf6650a148b9327f47249da35bba02d2c9ee1ca0b738f61a",
+  "xvenue_poly2.py": "c56a1b19344c8ace5e12979ce7d49d9379c6608976d42efbafdbb0313006af5a",
+  "xvenue_poly3.py": "7946cbce111bcded8a9b7251a4c398ae0c1b6dbf4cd43be494e18ccf0c6e1c68",
+  "xvenue_same.py": "bcaa65d44d1751a19a801aed64579017c1f9befb604cee0af5e324d8d04bb030",
+  "xvenue_test.py": "c9c870d93a8514ea4ac01661263ec7083fed85029d0e499cfdb7228989e5d48f",
+  "xvenue_test_poly.py": "2048602aa8145d9757abaf3f55457587803c5faedf9862593121662d8d991ec0"
+ }
+}

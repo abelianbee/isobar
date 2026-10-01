@@ -1,0 +1,9 @@
+# Pinned to the versions used for the 2026-09-28 release build (Python 3.14.4)
+pandas==3.0.2
+numpy==2.4.4
+statsmodels==0.15.0
+scipy==1.17.1
+scikit-learn==1.8.0
+pyarrow==23.0.1
+requests==2.33.1
+pytest==9.0.3

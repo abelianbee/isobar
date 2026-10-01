@@ -1,0 +1,54 @@
+run forecasts 2314 {'00': 1157, '12': 1157} stations 7
+  gfs_seamless: coverage 1.00  MAE 00Z 2.57  12Z 2.57
+  ecmwf_ifs: coverage 1.00  MAE 00Z 2.53  12Z 2.41
+  icon_seamless: coverage 1.00  MAE 00Z 2.42  12Z 2.32
+  ncep_nbm_conus: coverage 1.00  MAE 00Z 2.81  12Z 2.65
+  ncep_hrrr_conus: coverage 0.85  MAE 00Z 2.93  12Z 2.57
+  ukmo_seamless: coverage 0.99  MAE 00Z 2.46  12Z 2.32
+  meteofrance_seamless: coverage 1.00  MAE 00Z 3.01  12Z 3.02
+  knmi_seamless: coverage 1.00  MAE 00Z 2.54  12Z 2.41
+  dmi_seamless: coverage 1.00  MAE 00Z 2.54  12Z 2.41
+  ecmwf_aifs025_single: coverage 1.00  MAE 00Z 3.23  12Z 3.11
+  blend AUS: 7 models, 713 training days, resid sd 2.56
+  blend DEN: 7 models, 713 training days, resid sd 2.84
+  blend LAX: 7 models, 711 training days, resid sd 2.16
+  blend MDW: 7 models, 713 training days, resid sd 2.32
+  blend MIA: 7 models, 707 training days, resid sd 1.56
+  blend NYC: 7 models, 711 training days, resid sd 2.13
+  blend PHL: 7 models, 713 training days, resid sd 2.25
+blend MAE by run: {'00': 2.94, '12': 1.73}  by station (12Z): {'AUS': 1.41, 'DEN': 1.89, 'LAX': 1.48, 'MDW': 2.17, 'MIA': 1.33, 'NYC': 2.1, 'PHL': 1.72}
+
+h= 1 run=00Z events=332 Brier mkt=0.1130 model=0.1260 comb(fixed)=0.1195 | in-sample refit lpm coef=0.18 (z=1.9)
+   thr=0.03: N=16Y+1268N pnl/ct=-0.0305 ROI=-3.9% Sharpe=-10.70 | by station: MDW:-0.034(n=684), NYC:-0.027(n=600) | by month: 2026-04:-0.026, 2026-05:-0.032, 2026-06:-0.043, 2026-07:-0.034, 2026-08:-0.020, 2026-09:-0.028
+   thr=0.05: N=14Y+976N pnl/ct=-0.0336 ROI=-4.5% Sharpe=-7.41 | by station: MDW:-0.039(n=523), NYC:-0.027(n=467) | by month: 2026-04:-0.041, 2026-05:-0.020, 2026-06:-0.043, 2026-07:-0.042, 2026-08:-0.022, 2026-09:-0.038
+   thr=0.08: N=7Y+542N pnl/ct=-0.0171 ROI=-2.3% Sharpe=-1.83 | by station: MDW:-0.020(n=300), NYC:-0.014(n=249) | by month: 2026-04:-0.020, 2026-05:+0.025, 2026-06:-0.038, 2026-07:-0.006, 2026-08:-0.013, 2026-09:-0.065
+
+h= 2 run=00Z events=332 Brier mkt=0.1109 model=0.1262 comb(fixed)=0.1177 | in-sample refit lpm coef=0.12 (z=1.2)
+   thr=0.03: N=17Y+1262N pnl/ct=-0.0310 ROI=-4.0% Sharpe=-11.08 | by station: MDW:-0.036(n=688), NYC:-0.025(n=591) | by month: 2026-04:-0.032, 2026-05:-0.031, 2026-06:-0.040, 2026-07:-0.036, 2026-08:-0.022, 2026-09:-0.024
+   thr=0.05: N=11Y+984N pnl/ct=-0.0374 ROI=-5.0% Sharpe=-9.17 | by station: MDW:-0.048(n=542), NYC:-0.025(n=453) | by month: 2026-04:-0.052, 2026-05:-0.039, 2026-06:-0.028, 2026-07:-0.046, 2026-08:-0.027, 2026-09:-0.035
+   thr=0.08: N=7Y+535N pnl/ct=-0.0249 ROI=-3.4% Sharpe=-2.57 | by station: MDW:-0.040(n=303), NYC:-0.005(n=239) | by month: 2026-04:-0.011, 2026-05:+0.008, 2026-06:-0.064, 2026-07:-0.007, 2026-08:-0.014, 2026-09:-0.071
+
+h= 4 run=00Z events=332 Brier mkt=0.1111 model=0.1269 comb(fixed)=0.1175 | in-sample refit lpm coef=0.13 (z=1.3)
+   thr=0.03: N=18Y+1236N pnl/ct=-0.0270 ROI=-3.5% Sharpe=-9.98 | by station: MDW:-0.033(n=675), NYC:-0.021(n=579) | by month: 2026-04:-0.024, 2026-05:-0.034, 2026-06:-0.024, 2026-07:-0.032, 2026-08:-0.018, 2026-09:-0.028
+   thr=0.05: N=10Y+978N pnl/ct=-0.0302 ROI=-4.1% Sharpe=-7.13 | by station: MDW:-0.043(n=535), NYC:-0.015(n=453) | by month: 2026-04:-0.031, 2026-05:-0.042, 2026-06:-0.024, 2026-07:-0.036, 2026-08:-0.017, 2026-09:-0.031
+   thr=0.08: N=7Y+545N pnl/ct=-0.0240 ROI=-3.4% Sharpe=-2.65 | by station: MDW:-0.043(n=310), NYC:+0.001(n=242) | by month: 2026-04:+0.003, 2026-05:+0.017, 2026-06:-0.058, 2026-07:-0.023, 2026-08:-0.020, 2026-09:-0.062
+
+h= 6 run=00Z events=332 Brier mkt=0.1093 model=0.1275 comb(fixed)=0.1156 | in-sample refit lpm coef=0.10 (z=1.1)
+   thr=0.03: N=18Y+1189N pnl/ct=-0.0277 ROI=-3.7% Sharpe=-10.00 | by station: MDW:-0.034(n=667), NYC:-0.020(n=540) | by month: 2026-04:-0.025, 2026-05:-0.036, 2026-06:-0.032, 2026-07:-0.028, 2026-08:-0.021, 2026-09:-0.023
+   thr=0.05: N=12Y+935N pnl/ct=-0.0300 ROI=-4.2% Sharpe=-7.16 | by station: MDW:-0.042(n=524), NYC:-0.015(n=423) | by month: 2026-04:-0.026, 2026-05:-0.029, 2026-06:-0.038, 2026-07:-0.028, 2026-08:-0.024, 2026-09:-0.034
+   thr=0.08: N=8Y+528N pnl/ct=-0.0344 ROI=-5.0% Sharpe=-3.64 | by station: MDW:-0.053(n=306), NYC:-0.009(n=230) | by month: 2026-04:-0.025, 2026-05:-0.000, 2026-06:-0.083, 2026-07:-0.009, 2026-08:-0.027, 2026-09:-0.075
+
+h= 8 run=12Z events=332 Brier mkt=0.1079 model=0.1283 comb(fixed)=0.1143 | in-sample refit lpm coef=0.03 (z=0.4)
+   thr=0.03: N=17Y+1151N pnl/ct=-0.0236 ROI=-3.1% Sharpe=-8.61 | by station: MDW:-0.029(n=636), NYC:-0.017(n=532) | by month: 2026-04:-0.008, 2026-05:-0.041, 2026-06:-0.028, 2026-07:-0.025, 2026-08:-0.017, 2026-09:-0.017
+   thr=0.05: N=15Y+797N pnl/ct=-0.0275 ROI=-3.8% Sharpe=-4.44 | by station: MDW:-0.030(n=448), NYC:-0.025(n=364) | by month: 2026-04:-0.007, 2026-05:-0.052, 2026-06:-0.025, 2026-07:-0.045, 2026-08:-0.013, 2026-09:-0.010
+   thr=0.08: N=9Y+485N pnl/ct=-0.0332 ROI=-4.7% Sharpe=-3.15 | by station: MDW:-0.030(n=282), NYC:-0.038(n=212) | by month: 2026-04:-0.041, 2026-05:-0.071, 2026-06:-0.037, 2026-07:-0.018, 2026-08:+0.004, 2026-09:-0.029
+
+h=12 run=12Z events=332 Brier mkt=0.1059 model=0.1278 comb(fixed)=0.1117 | in-sample refit lpm coef=0.03 (z=0.4)
+   thr=0.03: N=17Y+1103N pnl/ct=-0.0179 ROI=-2.4% Sharpe=-5.89 | by station: MDW:-0.019(n=609), NYC:-0.016(n=511) | by month: 2026-04:-0.011, 2026-05:-0.040, 2026-06:-0.019, 2026-07:-0.008, 2026-08:-0.014, 2026-09:-0.013
+   thr=0.05: N=14Y+759N pnl/ct=-0.0263 ROI=-3.7% Sharpe=-4.03 | by station: MDW:-0.018(n=429), NYC:-0.036(n=344) | by month: 2026-04:-0.008, 2026-05:-0.047, 2026-06:+0.001, 2026-07:-0.039, 2026-08:-0.027, 2026-09:-0.025
+   thr=0.08: N=9Y+464N pnl/ct=-0.0281 ROI=-4.1% Sharpe=-2.55 | by station: MDW:-0.020(n=268), NYC:-0.038(n=205) | by month: 2026-04:-0.018, 2026-05:-0.067, 2026-06:-0.026, 2026-07:+0.010, 2026-08:+0.006, 2026-09:-0.078
+
+h=14 run=12Z events=332 Brier mkt=0.1047 model=0.1276 comb(fixed)=0.1105 | in-sample refit lpm coef=-0.01 (z=-0.1)
+   thr=0.03: N=18Y+1055N pnl/ct=-0.0213 ROI=-2.9% Sharpe=-6.38 | by station: MDW:-0.029(n=586), NYC:-0.012(n=487) | by month: 2026-04:-0.023, 2026-05:-0.037, 2026-06:-0.025, 2026-07:-0.011, 2026-08:-0.018, 2026-09:-0.012
+   thr=0.05: N=13Y+747N pnl/ct=-0.0279 ROI=-3.9% Sharpe=-4.14 | by station: MDW:-0.035(n=425), NYC:-0.019(n=335) | by month: 2026-04:-0.028, 2026-05:-0.069, 2026-06:-0.023, 2026-07:-0.016, 2026-08:-0.010, 2026-09:-0.014
+   thr=0.08: N=8Y+444N pnl/ct=-0.0181 ROI=-2.7% Sharpe=-1.55 | by station: MDW:-0.019(n=254), NYC:-0.017(n=198) | by month: 2026-04:-0.022, 2026-05:-0.050, 2026-06:-0.011, 2026-07:+0.034, 2026-08:-0.004, 2026-09:-0.077

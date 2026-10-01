@@ -1,0 +1,51 @@
+models: ['bom_access_global', 'cma_grapes_global', 'dmi_seamless', 'ecmwf_aifs025_single', 'ecmwf_ifs', 'ecmwf_ifs025', 'gem_seamless', 'gfs_graphcast025', 'gfs_seamless', 'icon_seamless', 'jma_seamless', 'kma_seamless', 'knmi_seamless', 'meteofrance_seamless', 'metno_seamless', 'ncep_hrrr_conus', 'ncep_nbm_conus', 'ukmo_seamless']
+MODE=w: forecast OOS MAE by station/year:
+year     2023  2024  2025  2026
+station                        
+AUS      2.54  2.55  2.07  1.70
+DEN      3.20  2.98  2.13  1.95
+LAX      2.18  2.42  1.55  1.64
+MDW      2.44  2.33  1.70  1.88
+MIA      1.63  2.02  1.23  1.25
+NYC      1.92  2.78  1.69  1.92
+PHL      2.14  2.21  1.82  1.73
+n models used: year     2023  2024  2025  2026
+station                        
+AUS         1     1    12    13
+DEN         1     1    12    13
+LAX         1     1    12    13
+MDW         1     1    12    13
+MIA         1     1    12    13
+NYC         1     1    12    13
+PHL         1     1    12    13
+events 1694 {'MDW': 357, 'NYC': 1337}
+
+h= 2 OOS events=1436 Brier mkt=0.1265 model=0.1323 comb=0.1225 b_lpm=0.45
+   thr=0.03: N=1179Y+1814N pnl/ct=+0.0447 ROI=+8.1% Sharpe=3.23 | by station: MDW:+0.064(n=1086), NYC:+0.034(n=1907) | hourly vol at signal: median=36 p25=1 zero-share=0.25; OI median=132
+   thr=0.05: N=766Y+1351N pnl/ct=+0.0535 ROI=+9.6% Sharpe=3.19 | by station: MDW:+0.073(n=771), NYC:+0.042(n=1346) | hourly vol at signal: median=37 p25=1 zero-share=0.24; OI median=141
+      by quarter: {'2023Q2': (0.138, 42), '2023Q3': (-0.038, 82), '2023Q4': (0.033, 52), '2024Q1': (-0.004, 124), '2024Q2': (0.056, 129), '2024Q3': (-0.063, 128), '2024Q4': (0.001, 73), '2025Q1': (0.055, 33), '2025Q2': (0.085, 78), '2025Q3': (0.055, 76), '2025Q4': (0.172, 158), '2026Q1': (0.096, 410), '2026Q2': (0.024, 430), '2026Q3': (0.069, 302)}
+   thr=0.08: N=248Y+873N pnl/ct=+0.0517 ROI=+8.5% Sharpe=2.36 | by station: MDW:+0.077(n=349), NYC:+0.040(n=772) | hourly vol at signal: median=37 p25=0 zero-share=0.27; OI median=139
+
+h= 8 OOS events=1515 Brier mkt=0.1245 model=0.1345 comb=0.1212 b_lpm=0.41
+   thr=0.03: N=762Y+1851N pnl/ct=+0.0322 ROI=+5.3% Sharpe=2.14 | by station: MDW:+0.055(n=899), NYC:+0.020(n=1714) | hourly vol at signal: median=87 p25=9 zero-share=0.19; OI median=633
+   thr=0.05: N=326Y+1365N pnl/ct=+0.0366 ROI=+5.8% Sharpe=2.04 | by station: MDW:+0.059(n=540), NYC:+0.026(n=1151) | hourly vol at signal: median=94 p25=8 zero-share=0.19; OI median=654
+      by quarter: {'2023Q2': (0.028, 30), '2023Q3': (0.004, 85), '2023Q4': (-0.018, 39), '2024Q1': (0.034, 119), '2024Q2': (0.035, 147), '2024Q3': (-0.059, 132), '2024Q4': (-0.058, 60), '2025Q1': (0.062, 48), '2025Q2': (0.046, 71), '2025Q3': (0.032, 61), '2025Q4': (0.148, 113), '2026Q1': (0.1, 294), '2026Q2': (0.013, 308), '2026Q3': (0.026, 184)}
+   thr=0.08: N=109Y+802N pnl/ct=+0.0327 ROI=+5.0% Sharpe=1.43 | by station: MDW:+0.046(n=262), NYC:+0.027(n=649) | hourly vol at signal: median=81 p25=2 zero-share=0.23; OI median=602
+
+h=12 OOS events=1526 Brier mkt=0.1224 model=0.1358 comb=0.1197 b_lpm=0.34
+   thr=0.03: N=444Y+1673N pnl/ct=+0.0191 ROI=+2.9% Sharpe=1.19 | by station: MDW:+0.041(n=722), NYC:+0.008(n=1395) | hourly vol at signal: median=116 p25=10 zero-share=0.19; OI median=1120
+   thr=0.05: N=114Y+1116N pnl/ct=+0.0300 ROI=+4.4% Sharpe=1.55 | by station: MDW:+0.045(n=375), NYC:+0.024(n=855) | hourly vol at signal: median=93 p25=1 zero-share=0.24; OI median=1042
+      by quarter: {'2023Q2': (-0.018, 29), '2023Q3': (-0.017, 70), '2023Q4': (-0.011, 25), '2024Q1': (0.036, 113), '2024Q2': (0.056, 120), '2024Q3': (-0.056, 109), '2024Q4': (-0.01, 48), '2025Q1': (0.04, 29), '2025Q2': (0.022, 57), '2025Q3': (0.067, 46), '2025Q4': (0.099, 83), '2026Q1': (0.099, 189), '2026Q2': (-0.009, 203), '2026Q3': (0.038, 109)}
+   thr=0.08: N=73Y+645N pnl/ct=+0.0372 ROI=+5.7% Sharpe=1.38 | by station: MDW:+0.049(n=212), NYC:+0.032(n=506) | hourly vol at signal: median=74 p25=0 zero-share=0.27; OI median=1014
+
+h=14 OOS events=1425 Brier mkt=0.1161 model=0.1336 comb=0.1147 b_lpm=0.30
+   thr=0.03: N=215Y+1411N pnl/ct=+0.0040 ROI=+0.6% Sharpe=0.24 | by station: MDW:+0.015(n=561), NYC:-0.002(n=1065) | hourly vol at signal: median=200 p25=54 zero-share=0.12; OI median=1702
+   thr=0.05: N=78Y+894N pnl/ct=+0.0147 ROI=+2.1% Sharpe=0.70 | by station: MDW:+0.030(n=341), NYC:+0.006(n=631) | hourly vol at signal: median=196 p25=46 zero-share=0.14; OI median=1609
+      by quarter: {'2023Q3': (-0.086, 50), '2023Q4': (0.029, 19), '2024Q1': (0.025, 67), '2024Q2': (0.026, 77), '2024Q3': (-0.064, 71), '2024Q4': (-0.087, 42), '2025Q1': (0.104, 28), '2025Q2': (0.038, 54), '2025Q3': (0.001, 47), '2025Q4': (0.085, 74), '2026Q1': (0.077, 160), '2026Q2': (-0.007, 176), '2026Q3': (0.0, 107)}
+   thr=0.08: N=47Y+432N pnl/ct=+0.0179 ROI=+2.7% Sharpe=0.58 | by station: MDW:+0.039(n=153), NYC:+0.008(n=326) | hourly vol at signal: median=180 p25=40 zero-share=0.16; OI median=1455
+
+h=22 OOS events=930 Brier mkt=0.0972 model=0.1201 comb=0.0972 b_lpm=0.31
+   thr=0.03: N=275Y+765N pnl/ct=+0.0084 ROI=+1.3% Sharpe=0.53 | by station: MDW:+0.006(n=488), NYC:+0.010(n=552) | hourly vol at signal: median=673 p25=302 zero-share=0.08; OI median=4602
+   thr=0.05: N=68Y+449N pnl/ct=+0.0079 ROI=+1.2% Sharpe=0.39 | by station: MDW:+0.001(n=244), NYC:+0.014(n=273) | hourly vol at signal: median=708 p25=299 zero-share=0.11; OI median=4775
+      by quarter: {'2025Q1': (-0.085, 10), '2025Q2': (-0.05, 29), '2025Q3': (0.03, 53), '2025Q4': (0.064, 77), '2026Q1': (0.053, 137), '2026Q2': (-0.055, 141), '2026Q3': (0.006, 70)}
+   thr=0.08: N=26Y+202N pnl/ct=+0.0002 ROI=+0.0% Sharpe=0.01 | by station: MDW:+0.008(n=123), NYC:-0.009(n=105) | hourly vol at signal: median=675 p25=269 zero-share=0.15; OI median=4657

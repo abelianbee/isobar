@@ -1,0 +1,267 @@
+poly rows 337011 events 1890 {'atlanta': 288, 'chicago': 241, 'dallas': 287, 'miami': 244, 'nyc': 545, 'seattle': 285}
+poly fits 34334 median sigma 1.9 median loss 0.0014600638993608357
+kalshi fits 82895
+offset nyc: KNYC-KLGA mean -0.47 sd 1.82 (n=998)
+offset chicago: KMDW-KORD mean +0.81 sd 1.58 (n=2094)
+offset dallas: KDFW-KDAL mean +0.34 sd 1.18 (n=997)
+panel rows 143743 events 1719 {'atlanta': 229, 'chicago': 241, 'dallas': 222, 'miami': 241, 'nyc': 537, 'seattle': 249} hours/event 13.9
+target range 2025-03-01 2026-09-26
+reverse panel rows 241037 events 1714
+rows 142353 events 1714 range 2025-03-01 2026-09-26
+{'atlanta': 229, 'chicago': 241, 'dallas': 222, 'miami': 241, 'nyc': 533, 'seattle': 248}
+{'shoulder': 417, 'summer': 808, 'winter': 489}
+
+=== 1. Does the Polymarket-implied bracket probability carry information beyond the Kalshi mid? (logit, event-clustered) ===
+D-1 14-17Z   n= 24485 ev=1523 | lmid 1.15 lpx 0.11 (z= 3.5) | control own-fit lpk 0.97 (z= 7.1) | Brier mid 0.1145 px 0.1280 comb 0.1141
+D-1 18-21Z   n= 35598 ev=1609 | lmid 1.10 lpx 0.09 (z= 3.1) | control own-fit lpk 0.89 (z= 5.9) | Brier mid 0.1141 px 0.1283 comb 0.1140
+D-1 22Z-23Z  n= 17888 ev=1563 | lmid 1.11 lpx 0.10 (z= 3.2) | control own-fit lpk 0.70 (z= 4.8) | Brier mid 0.1118 px 0.1264 comb 0.1116
+D 00-03Z     n= 36569 ev=1627 | lmid 1.09 lpx 0.09 (z= 3.2) | control own-fit lpk 0.73 (z= 5.6) | Brier mid 0.1098 px 0.1250 comb 0.1097
+D 04-05Z     n= 18582 ev=1622 | lmid 1.11 lpx 0.08 (z= 3.0) | control own-fit lpk 0.85 (z= 5.4) | Brier mid 0.1072 px 0.1244 comb 0.1071
+ALL          n=142353 ev=1714 | lmid 1.11 lpx 0.09 (z= 3.5) | control own-fit lpk 0.84 (z= 7.1) | Brier mid 0.1113 px 0.1265 comb 0.1112
+
+=== 2. Lead-lag on implied means (per event, hourly): dmu_K(t+1) ~ gap(t)=mu_P_adj-mu_K, dmu_K(t), dmu_P(t) ; and reverse ===
+all       n= 18902 | Kalshi->Poly-price: gap +0.021 (t= 5.2) lagged dP +0.025 (t= 2.3) own dK -0.045 | Poly->Kalshi-price: gap -0.065 (t=-1.8) lagged dK -0.134 (t=-1.5) | share of adjustment done by Kalshi -0.46 | corr(dk,dp) 0.07 sd gap 1.11
+D-1       n= 10528 | Kalshi->Poly-price: gap +0.017 (t= 5.3) lagged dP +0.022 (t= 2.6) own dK -0.053 | Poly->Kalshi-price: gap +0.032 (t= 1.0) lagged dK -0.042 (t=-1.2) | share of adjustment done by Kalshi 0.35 | corr(dk,dp) 0.04 sd gap 1.12
+D         n=  8374 | Kalshi->Poly-price: gap +0.025 (t= 3.4) lagged dP +0.029 (t= 1.5) own dK -0.040 | Poly->Kalshi-price: gap -0.191 (t=-2.8) lagged dK -0.210 (t=-1.3) | share of adjustment done by Kalshi -0.15 | corr(dk,dp) 0.09 sd gap 1.10
+chicago   n=  2662 | Kalshi->Poly-price: gap +0.010 (t= 0.8) lagged dP +0.028 (t= 1.3) own dK -0.083 | Poly->Kalshi-price: gap -0.029 (t=-0.2) lagged dK +0.244 (t= 1.0) | share of adjustment done by Kalshi -0.50 | corr(dk,dp) 0.07 sd gap 1.26
+miami     n=  3032 | Kalshi->Poly-price: gap +0.030 (t= 3.0) lagged dP +0.029 (t= 0.5) own dK -0.049 | Poly->Kalshi-price: gap +0.039 (t= 2.5) lagged dK -0.107 (t=-1.8) | share of adjustment done by Kalshi 0.43 | corr(dk,dp) 0.12 sd gap 0.64
+nyc       n=  4909 | Kalshi->Poly-price: gap +0.026 (t= 3.1) lagged dP +0.035 (t= 1.3) own dK -0.046 | Poly->Kalshi-price: gap -0.018 (t=-0.5) lagged dK -0.287 (t=-1.6) | share of adjustment done by Kalshi 3.28 | corr(dk,dp) 0.09 sd gap 1.30
+atlanta   n=  2760 | Kalshi->Poly-price: gap +0.056 (t= 5.1) lagged dP +0.052 (t= 2.1) own dK -0.011 | Poly->Kalshi-price: gap -0.008 (t=-0.2) lagged dK -0.051 (t=-1.5) | share of adjustment done by Kalshi 1.16 | corr(dk,dp) 0.04 sd gap 0.72
+dallas    n=  2568 | Kalshi->Poly-price: gap +0.010 (t= 2.4) lagged dP +0.002 (t= 0.2) own dK -0.003 | Poly->Kalshi-price: gap -0.186 (t=-1.5) lagged dK -0.496 (t=-2.2) | share of adjustment done by Kalshi -0.06 | corr(dk,dp) 0.03 sd gap 1.26
+seattle   n=  2971 | Kalshi->Poly-price: gap +0.022 (t= 3.1) lagged dP +0.021 (t= 1.1) own dK -0.017 | Poly->Kalshi-price: gap -0.115 (t=-1.5) lagged dK -0.145 (t=-2.7) | share of adjustment done by Kalshi -0.23 | corr(dk,dp) 0.07 sd gap 0.91
+
+=== 3. Walk-forward trading Kalshi (monthly refit on prior months, warm-up 40 events), thr=0.05, taker fee, one position per bracket-side per event (first signal) ===
+D-1 all hours | mid+poly                                     N=  866 (549Y/317N) pnl/ct=+0.0160 t= 1.0 win=0.62 dailySharpe=1.01 days=452 | atlanta:-0.008(117) chicago:+0.010(124) dallas:-0.008(109) miami:-0.003(220) nyc:+0.058(152) seattle:+0.042(144)
+D-1 all hours | CONTROL mid+own normal fit                   N= 1180 (703Y/477N) pnl/ct=+0.0095 t= 0.8 win=0.63 dailySharpe=0.78 days=452 | atlanta:+0.000(160) chicago:+0.017(143) dallas:+0.032(166) miami:+0.010(280) nyc:-0.001(254) seattle:+0.005(177)
+D-1 22Z..D 03Z | mid+poly                                    N=  557 (239Y/318N) pnl/ct=+0.0096 t= 0.5 win=0.68 dailySharpe=0.59 days=450 | atlanta:+0.014(67) chicago:-0.018(122) dallas:-0.024(80) miami:-0.011(102) nyc:+0.112(83) seattle:+0.004(103)
+D-1 22Z..D 03Z | CONTROL mid+own normal fit                  N=  605 (229Y/376N) pnl/ct=+0.0323 t= 2.2 win=0.72 dailySharpe=2.09 days=450 | atlanta:-0.031(88) chicago:+0.033(86) dallas:+0.134(67) miami:+0.059(103) nyc:+0.015(168) seattle:+0.020(93)
+D 00-05Z | mid+poly                                          N=  544 (213Y/331N) pnl/ct=-0.0025 t=-0.1 win=0.67 dailySharpe=-0.15 days=471 | atlanta:+0.006(71) chicago:-0.024(123) dallas:-0.055(84) miami:-0.005(79) nyc:+0.068(91) seattle:+0.000(96)
+D 00-05Z | CONTROL mid+own normal fit                        N=  908 (378Y/530N) pnl/ct=+0.0299 t= 2.4 win=0.68 dailySharpe=2.13 days=471 | atlanta:+0.006(136) chicago:+0.013(154) dallas:+0.089(103) miami:+0.030(117) nyc:+0.036(285) seattle:+0.010(113)
+all hours | mid+poly                                         N=  927 (480Y/447N) pnl/ct=+0.0035 t= 0.2 win=0.65 dailySharpe=0.24 days=484 | atlanta:+0.011(127) chicago:-0.027(168) dallas:-0.045(102) miami:-0.022(210) nyc:+0.067(162) seattle:+0.031(158)
+    winter   N= 418 pnl/ct=+0.0289
+    shoulder N= 347 pnl/ct=-0.0066
+    summer   N= 162 pnl/ct=-0.0402
+    mean coef lpx over refits 0.13
+all hours | mid+poly, +2c slippage                           N=  927 (480Y/447N) pnl/ct=-0.0165 t=-1.1 win=0.65 dailySharpe=-1.12 days=484 | atlanta:-0.009(127) chicago:-0.047(168) dallas:-0.065(102) miami:-0.042(210) nyc:+0.047(162) seattle:+0.011(158)
+all hours | mid+poly, thr .08                                N=  252 (98Y/154N) pnl/ct=+0.0042 t= 0.2 win=0.65 dailySharpe=0.17 days=484 | atlanta:+0.024(27) chicago:-0.057(62) dallas:+0.023(41) miami:-0.057(34) nyc:+0.107(52) seattle:-0.018(36)
+all hours | mid+poly, every hour (not first-only)            N= 5348 (2977Y/2371N) pnl/ct=-0.0114 t=-1.9 win=0.64 dailySharpe=-0.66 days=484 | atlanta:-0.021(667) chicago:-0.041(1153) dallas:-0.024(678) miami:-0.009(1310) nyc:+0.062(691) seattle:-0.017(849)
+all hours | CONTROL mid+own normal fit                       N= 1639 (786Y/853N) pnl/ct=+0.0258 t= 2.7 win=0.67 dailySharpe=2.41 days=484 | atlanta:+0.017(234) chicago:+0.011(241) dallas:+0.050(208) miami:+0.043(279) nyc:+0.018(443) seattle:+0.023(234)
+
+=== 4. Placebo: Polymarket distribution taken from the SAME city, PREVIOUS target day ===
+placebo (yesterday's Polymarket) all hours                   N=  430 (391Y/39N) pnl/ct=-0.0245 t=-1.1 win=0.53 dailySharpe=-1.08 days=447 | atlanta:-0.060(67) chicago:-0.082(64) dallas:-0.107(47) miami:+0.068(72) nyc:-0.035(110) seattle:+0.038(70)
+    placebo lpx coef -0.03
+rows 153500 with blend 153500 events 1712 {'atlanta': 229, 'chicago': 240, 'dallas': 222, 'miami': 241, 'nyc': 532, 'seattle': 248} {'shoulder': 415, 'summer': 808, 'winter': 489}
+
+=== information beyond the Polymarket price (event-clustered logits) ===
+ALL            n=153500 lp+lx      lp=0.75(z=14.7) lx=0.44(z=8.3) Brier 0.0957 (mkt 0.0966)
+ALL            n=153500 lp+lpm     lp=0.87(z=20.2) lpm=0.28(z=7.6) Brier 0.0956 (mkt 0.0966)
+ALL            n=153500 lp+lx+lpm  lp=0.70(z=13.3) lx=0.32(z=5.5) lpm=0.19(z=4.8) Brier 0.0953 (mkt 0.0966)
+D-1 14-21Z     n= 67184 lp+lx      lp=0.73(z=13.4) lx=0.46(z=7.9) Brier 0.0941 (mkt 0.0950)
+D-1 14-21Z     n= 67184 lp+lpm     lp=0.80(z=17.8) lpm=0.33(z=9.0) Brier 0.0936 (mkt 0.0950)
+D-1 14-21Z     n= 67184 lp+lx+lpm  lp=0.66(z=11.7) lx=0.27(z=4.4) lpm=0.26(z=6.5) Brier 0.0934 (mkt 0.0950)
+D-1 22Z-D 03Z  n= 58381 lp+lx      lp=0.74(z=13.6) lx=0.45(z=7.7) Brier 0.0962 (mkt 0.0972)
+D-1 22Z-D 03Z  n= 58381 lp+lpm     lp=0.88(z=19.5) lpm=0.26(z=6.8) Brier 0.0963 (mkt 0.0972)
+D-1 22Z-D 03Z  n= 58381 lp+lx+lpm  lp=0.69(z=12.3) lx=0.34(z=5.5) lpm=0.17(z=4.0) Brier 0.0959 (mkt 0.0972)
+D 04-06Z       n= 27935 lp+lx      lp=0.80(z=14.8) lx=0.41(z=7.3) Brier 0.0984 (mkt 0.0992)
+D 04-06Z       n= 27935 lp+lpm     lp=0.97(z=21.9) lpm=0.18(z=4.8) Brier 0.0986 (mkt 0.0992)
+D 04-06Z       n= 27935 lp+lx+lpm  lp=0.79(z=14.1) lx=0.36(z=5.9) lpm=0.07(z=1.7) Brier 0.0983 (mkt 0.0992)
+
+=== bracket-level error correction: d pn(t+1) ~ gap(t) = pxk - pn  (share of gap closed per hour) ===
+all   n=136520 gap coef +0.027 (t=13.8)  -> half-life 25.3 h
+D-1   n=82243 gap coef +0.027 (t=17.7)  -> half-life 25.1 h
+D     n=54277 gap coef +0.027 (t=6.7)  -> half-life 25.5 h
+
+=== walk-forward trading on Polymarket: monthly refit on prior months, warm-up 40 events, first signal per bracket-side, hold to settlement ===
+lp+lx                                            thr=0.05 hs=0.02         N= 2745 pnl/ct=+0.0387 t= 4.9 win=0.55 dSharpe=3.80 | atlanta:-0.003(425) chicago:+0.049(181) dallas:-0.028(169) miami:+0.065(639) nyc:+0.040(923) seattle:+0.060(408)
+lp+lx                                            thr=0.05 hs=0.03         N= 2194 pnl/ct=+0.0383 t= 4.3 win=0.56 dSharpe=3.34
+lp+lx                                            thr=0.05 hs=0.05         N= 1467 pnl/ct=+0.0380 t= 3.4 win=0.57 dSharpe=2.54
+lp+lx                                            thr=0.05 hs=0.02 DELAY1h N= 2502 pnl/ct=+0.0352 t= 4.2 win=0.56 dSharpe=3.35
+lp+lx                                            thr=0.08 hs=0.02         N= 1467 pnl/ct=+0.0680 t= 6.1 win=0.57 dSharpe=4.48 | atlanta:-0.012(188) chicago:+0.061(84) dallas:-0.012(58) miami:+0.100(447) nyc:+0.077(492) seattle:+0.077(198)
+lp+lx                                            thr=0.08 hs=0.03         N= 1198 pnl/ct=+0.0705 t= 5.6 win=0.58 dSharpe=4.14
+lp+lx                                            thr=0.08 hs=0.05         N=  810 pnl/ct=+0.0694 t= 4.5 win=0.60 dSharpe=3.28
+lp+lx                                            thr=0.08 hs=0.02 DELAY1h N= 1301 pnl/ct=+0.0669 t= 5.6 win=0.58 dSharpe=4.18
+lp+lpm                                           thr=0.05 hs=0.02         N= 2200 pnl/ct=+0.0448 t= 5.1 win=0.60 dSharpe=4.14 | atlanta:+0.007(206) chicago:+0.060(297) dallas:-0.015(103) miami:+0.069(404) nyc:+0.037(824) seattle:+0.062(366)
+lp+lpm                                           thr=0.05 hs=0.03         N= 1733 pnl/ct=+0.0421 t= 4.3 win=0.61 dSharpe=3.38
+lp+lpm                                           thr=0.05 hs=0.05         N= 1116 pnl/ct=+0.0329 t= 2.6 win=0.62 dSharpe=2.12
+lp+lpm                                           thr=0.05 hs=0.02 DELAY1h N= 2064 pnl/ct=+0.0440 t= 4.9 win=0.60 dSharpe=4.02
+lp+lpm                                           thr=0.08 hs=0.02         N= 1116 pnl/ct=+0.0629 t= 5.0 win=0.62 dSharpe=3.97 | atlanta:+0.029(85) chicago:+0.101(141) dallas:-0.005(37) miami:+0.103(226) nyc:+0.040(489) seattle:+0.080(138)
+lp+lpm                                           thr=0.08 hs=0.03         N=  903 pnl/ct=+0.0686 t= 4.9 win=0.64 dSharpe=3.86
+lp+lpm                                           thr=0.08 hs=0.05         N=  642 pnl/ct=+0.0678 t= 4.1 win=0.66 dSharpe=3.16
+lp+lpm                                           thr=0.08 hs=0.02 DELAY1h N= 1013 pnl/ct=+0.0613 t= 4.7 win=0.63 dSharpe=3.83
+lp+lx+lpm                                        thr=0.05 hs=0.02         N= 3126 pnl/ct=+0.0489 t= 6.7 win=0.57 dSharpe=5.11 | atlanta:+0.009(439) chicago:+0.079(296) dallas:+0.023(164) miami:+0.064(621) nyc:+0.040(1076) seattle:+0.073(530)
+lp+lx+lpm                                        thr=0.05 hs=0.03         N= 2597 pnl/ct=+0.0439 t= 5.4 win=0.57 dSharpe=4.20
+lp+lx+lpm                                        thr=0.05 hs=0.05         N= 1748 pnl/ct=+0.0449 t= 4.5 win=0.58 dSharpe=3.41
+lp+lx+lpm                                        thr=0.05 hs=0.02 DELAY1h N= 2896 pnl/ct=+0.0468 t= 6.1 win=0.57 dSharpe=4.81
+lp+lx+lpm                                        thr=0.08 hs=0.02         N= 1748 pnl/ct=+0.0749 t= 7.5 win=0.58 dSharpe=5.55 | atlanta:+0.011(190) chicago:+0.108(139) dallas:-0.024(61) miami:+0.094(429) nyc:+0.067(671) seattle:+0.115(258)
+lp+lx+lpm                                        thr=0.08 hs=0.03         N= 1435 pnl/ct=+0.0655 t= 5.9 win=0.58 dSharpe=4.36
+lp+lx+lpm                                        thr=0.08 hs=0.05         N= 1006 pnl/ct=+0.0636 t= 4.7 win=0.59 dSharpe=3.56
+lp+lx+lpm                                        thr=0.08 hs=0.02 DELAY1h N= 1579 pnl/ct=+0.0689 t= 6.5 win=0.59 dSharpe=5.05
+lp+lx by season                                  thr=0.05 hs=0.02         N= 2745 pnl/ct=+0.0387 t= 4.9 win=0.55 dSharpe=3.80
+   shoulder N= 644 pnl/ct=+0.0351 t=2.1
+   summer   N= 970 pnl/ct=+0.0244 t=1.8
+   winter   N=1131 pnl/ct=+0.0530 t=4.3
+   D-1 14-21Z     N=1729 pnl/ct=+0.0541
+   D-1 22Z-D 03Z  N= 660 pnl/ct=+0.0133
+   D 04-06Z       N= 356 pnl/ct=+0.0110
+
+INCREMENTAL trades (3-var signal fires, blend-only does not): N=1796 pnl/ct=+0.0346 t=3.6
+psum distribution (raw strip sum): {'mean': 1.024, '25%': 1.0, '50%': 1.027, '75%': 1.049}
+
+=== RAW-price execution (the honest number), hs=2c ===
+lp+lx thr 0.05 exec at NORMALISED price (as before)     N= 2683 pnl/ct=+0.0373 sd=0.414 t= 4.7 win=0.55 dSharpe(all days)=3.40 ROI=+0.073
+lp+lx thr 0.05 exec at RAW price                        N= 2902 pnl/ct=+0.0386 sd=0.414 t= 5.0 win=0.57 dSharpe(all days)=3.83 ROI=+0.072
+lp+lx+lpm thr 0.05 exec at RAW price                    N= 3287 pnl/ct=+0.0479 sd=0.411 t= 6.7 win=0.58 dSharpe(all days)=4.90 ROI=+0.090
+lp+lx thr 0.08 exec at NORMALISED price (as before)     N= 1447 pnl/ct=+0.0680 sd=0.429 t= 6.0 win=0.57 dSharpe(all days)=4.18 ROI=+0.135
+lp+lx thr 0.08 exec at RAW price                        N= 1608 pnl/ct=+0.0617 sd=0.432 t= 5.7 win=0.59 dSharpe(all days)=4.08 ROI=+0.117
+lp+lx+lpm thr 0.08 exec at RAW price                    N= 1900 pnl/ct=+0.0686 sd=0.421 t= 7.1 win=0.59 dSharpe(all days)=5.10 ROI=+0.130
+
+=== lp+lx thr .05 hs 2c raw: breakdowns ===
+by side:
+        mean  size
+side              
+N     0.0484  1643
+Y     0.0258  1259
+by season x hour block:
+            mean                       size                   
+blk      22Z-03Z D 04-06Z D-1 <=21Z 22Z-03Z D 04-06Z D-1 <=21Z
+season                                                        
+shoulder  0.0139   0.0092    0.0469     177       81       428
+summer    0.0297   0.0238    0.0280     264      159       651
+winter   -0.0000  -0.0437    0.0779     213      112       817
+by Kalshi hours-since-open h:
+hb      (0, 1]    (1, 2]    (2, 4]    (4, 8]   (8, 12]  (12, 20]
+mean    0.0609    0.0368    0.0617    0.0274    0.0157    0.0098
+size  896.0000  259.0000  336.0000  565.0000  441.0000  404.0000
+by month:
+month  2025-05  2025-06  2025-07  2025-08  2025-09  2025-10  2025-11  2025-12  2026-01  2026-02  2026-03  2026-04  2026-05  2026-06  2026-07  2026-08  2026-09
+mean     0.109    0.074   -0.073    0.083    -0.02    0.024    0.013    0.056    0.066    0.035    0.067    0.003    0.052    0.033    0.044    0.041    0.015
+size    89.000   77.000   76.000   70.000    73.00   69.000   76.000   65.000  164.000  401.000  436.000  317.000  211.000  220.000  180.000  176.000  202.000
+sum      9.714    5.722   -5.513    5.794    -1.46    1.664    1.005    3.628   10.839   14.013   29.286    0.993   10.924    7.151    7.900    7.248    3.029
+by city x season:
+            mean                     size              
+season  shoulder  summer  winter shoulder summer winter
+city                                                   
+atlanta   0.0430 -0.0783  0.0004      119    162    144
+chicago  -0.0728  0.0788  0.0602       35     58    130
+dallas   -0.0016 -0.0008 -0.0269       40     74     71
+miami     0.0656  0.0688  0.0954      164    242    232
+nyc       0.0454  0.0238  0.0503      248    384    375
+seattle  -0.0152  0.0796  0.0621       80    154    190
+by model edge bin:
+eb    (0.05, 0.07]  (0.07, 0.1]  (0.1, 0.15]  (0.15, 0.25]  (0.25, 1.0]
+mean        0.0296       0.0252       0.0625        0.1443       0.1782
+size     1710.0000     731.0000     299.0000      137.0000      25.0000
+by Poly price level:
+pb    (0.0, 0.05]  (0.05, 0.15]  (0.15, 0.3]  (0.3, 0.5]  (0.5, 0.7]  (0.7, 0.85]  (0.85, 1.0]
+mean        0.051        0.0357       0.0418      0.0422      0.0044       0.2029      -0.1674
+size       67.000      484.0000    1020.0000   1065.0000    218.0000      29.0000      19.0000
+mean refit coefs: lx 0.64 lp 0.62
+
+=== exit after k hours at Poly price (pay hs again) vs hold to settlement ===
+k= 3h: N=2324 exit pnl/ct=-0.0198 (t=-16.9) vs hold +0.0466
+k= 6h: N=1985 exit pnl/ct=-0.0065 (t=-4.1) vs hold +0.0458
+k=12h: N=1305 exit pnl/ct=+0.0053 (t=2.0) vs hold +0.0564
+
+=== placebos ===
+placebo A: Kalshi of previous day                       N=  307 pnl/ct=-0.0074 sd=0.491 t=-0.3 win=0.55 dSharpe(all days)=-0.26 ROI=-0.013
+   lx coef -0.0
+placebo B: Kalshi 6h stale (same day)                   N= 1266 pnl/ct=+0.0446 sd=0.431 t= 3.7 win=0.59 dSharpe(all days)=2.89 ROI=+0.082
+   lx coef 0.44
+placebo C: Kalshi shuffled across days                  N=  546 pnl/ct=+0.0188 sd=0.465 t= 0.9 win=0.54 dSharpe(all days)=0.86 ROI=+0.036
+   lx coef 0.04 rows 135491
+
+=== capacity proxy: Polymarket total $ volume of signalled brackets ===
+{'25%': 5328.0, '50%': 10044.0, '75%': 17997.0} signals/day 6.1 days 476
+signals/day by city: {'atlanta': 2.21, 'chicago': 1.76, 'dallas': 1.58, 'miami': 2.71, 'nyc': 2.52, 'seattle': 2.22}
+identical-contract rows 20296 events 354 {'atlanta': 110, 'miami': 125, 'seattle': 119} brackets/event 3.85
+settlement disagreement on identical brackets: 16.190% of 1365 brackets; events with any disagreement: 34.181%
+mean |Kalshi mid - Poly mid|: 0.0753  median Kalshi spread 0.010000000000000009  corr(mid,p) 0.799
+
+=== error-correction / information shares (identical contracts, hourly) ===
+all        n= 17107 | Poly->Kalshi speed +0.027/h (t=12.6) | Kalshi->Poly speed +0.016/h (t= 6.6) | GG share Kalshi 0.63 | Hasbrouck IS Kalshi [0.74,0.81] | corr(dK,dP) 0.05 | Poly half-life 25.1h
+miami      n=  6121 | Poly->Kalshi speed +0.022/h (t= 7.6) | Kalshi->Poly speed +0.003/h (t= 0.8) | GG share Kalshi 0.90 | Hasbrouck IS Kalshi [0.98,0.99] | corr(dK,dP) 0.03 | Poly half-life 31.2h
+atlanta    n=  5403 | Poly->Kalshi speed +0.043/h (t= 8.0) | Kalshi->Poly speed +0.041/h (t= 6.1) | GG share Kalshi 0.51 | Hasbrouck IS Kalshi [0.54,0.68] | corr(dK,dP) 0.09 | Poly half-life 15.9h
+seattle    n=  5583 | Poly->Kalshi speed +0.027/h (t= 7.1) | Kalshi->Poly speed +0.027/h (t= 5.7) | GG share Kalshi 0.50 | Hasbrouck IS Kalshi [0.52,0.60] | corr(dK,dP) 0.06 | Poly half-life 25.2h
+h<=8       n=  8549 | Poly->Kalshi speed +0.028/h (t= 9.2) | Kalshi->Poly speed +0.013/h (t= 3.7) | GG share Kalshi 0.69 | Hasbrouck IS Kalshi [0.83,0.88] | corr(dK,dP) 0.05 | Poly half-life 24.4h
+h>8        n=  8558 | Poly->Kalshi speed +0.026/h (t= 8.5) | Kalshi->Poly speed +0.019/h (t= 5.5) | GG share Kalshi 0.58 | Hasbrouck IS Kalshi [0.66,0.75] | corr(dK,dP) 0.06 | Poly half-life 25.8h
+
+=== which venue predicts the outcome? logit(y) ~ logit(p_K) + logit(p_P), event-clustered ===
+all     n= 20296 Kalshi 0.48 (z=4.2)  Poly 0.78 (z=7.2) | Brier Kalshi 0.1438 Poly 0.1417
+h<=8    n= 10178 Kalshi 0.53 (z=4.2)  Poly 0.74 (z=6.5) | Brier Kalshi 0.1449 Poly 0.1436
+h 9-16  n= 10118 Kalshi 0.45 (z=4.0)  Poly 0.81 (z=7.3) | Brier Kalshi 0.1427 Poly 0.1399
+
+=== model-free laggard trade: buy Polymarket toward Kalshi mid when |Kalshi mid - Poly mid| > thr; cost = Poly mid + hs; hold to settlement ===
+Poly toward Kalshi                 thr=0.05 hs=0.01 N=1382 pnl/ct=+0.0266 t= 2.4 win=0.47 dSharpe=3.29 | atlanta:+0.004(449) miami:+0.074(472) seattle:-0.001(461)
+Poly toward Kalshi                 thr=0.05 hs=0.02 N=1382 pnl/ct=+0.0166 t= 1.5 win=0.47 dSharpe=2.05 | atlanta:-0.006(449) miami:+0.064(472) seattle:-0.011(461)
+Poly toward Kalshi                 thr=0.05 hs=0.03 N=1382 pnl/ct=+0.0066 t= 0.6 win=0.47 dSharpe=0.81 | atlanta:-0.016(449) miami:+0.054(472) seattle:-0.021(461)
+Poly toward Kalshi                 thr=0.05 hs=0.02 DELAY1h N=1349 pnl/ct=+0.0153 t= 1.4 win=0.47 dSharpe=1.85 | atlanta:-0.005(434) miami:+0.062(465) seattle:-0.014(450)
+Poly toward Kalshi, h<=8 only      thr=0.05 hs=0.02 N=1135 pnl/ct=+0.0207 t= 1.7 win=0.48 dSharpe=2.20 | atlanta:+0.004(346) miami:+0.064(414) seattle:-0.012(375)
+Poly toward Kalshi                 thr=0.08 hs=0.01 N=1060 pnl/ct=+0.0367 t= 2.9 win=0.48 dSharpe=3.36 | atlanta:+0.012(326) miami:+0.090(392) seattle:-0.001(342)
+Poly toward Kalshi                 thr=0.08 hs=0.02 N=1060 pnl/ct=+0.0267 t= 2.1 win=0.48 dSharpe=2.45 | atlanta:+0.002(326) miami:+0.080(392) seattle:-0.011(342)
+Poly toward Kalshi                 thr=0.08 hs=0.03 N=1060 pnl/ct=+0.0167 t= 1.3 win=0.48 dSharpe=1.54 | atlanta:-0.008(326) miami:+0.070(392) seattle:-0.021(342)
+Poly toward Kalshi                 thr=0.08 hs=0.02 DELAY1h N=1035 pnl/ct=+0.0250 t= 1.9 win=0.48 dSharpe=2.32 | atlanta:+0.000(317) miami:+0.079(386) seattle:-0.014(332)
+Poly toward Kalshi, h<=8 only      thr=0.08 hs=0.02 N= 840 pnl/ct=+0.0296 t= 2.1 win=0.49 dSharpe=2.48 | atlanta:+0.007(245) miami:+0.090(332) seattle:-0.025(263)
+Poly toward Kalshi                 thr=0.12 hs=0.01 N= 704 pnl/ct=+0.0524 t= 3.2 win=0.48 dSharpe=3.58 | atlanta:+0.012(186) miami:+0.108(307) seattle:+0.006(211)
+Poly toward Kalshi                 thr=0.12 hs=0.02 N= 704 pnl/ct=+0.0424 t= 2.6 win=0.48 dSharpe=2.90 | atlanta:+0.002(186) miami:+0.098(307) seattle:-0.004(211)
+Poly toward Kalshi                 thr=0.12 hs=0.03 N= 704 pnl/ct=+0.0324 t= 2.0 win=0.48 dSharpe=2.22 | atlanta:-0.008(186) miami:+0.088(307) seattle:-0.014(211)
+Poly toward Kalshi                 thr=0.12 hs=0.02 DELAY1h N= 682 pnl/ct=+0.0368 t= 2.2 win=0.48 dSharpe=2.46 | atlanta:-0.003(178) miami:+0.091(302) seattle:-0.009(202)
+Poly toward Kalshi, h<=8 only      thr=0.12 hs=0.02 N= 521 pnl/ct=+0.0408 t= 2.2 win=0.49 dSharpe=2.40 | atlanta:+0.001(125) miami:+0.092(239) seattle:-0.005(157)
+REVERSE Kalshi toward Poly (taker+fee)  thr=0.05 N=1264 pnl/ct=-0.0366 t=-3.2
+REVERSE Kalshi toward Poly (taker+fee)  thr=0.08 N= 977 pnl/ct=-0.0330 t=-2.5
+
+=== DEV (<=2026-03) ===
+S1 lp+lx thr 0.05 hs 2c                              N=1596 pnl_ct=0.0468 t=4.6 win=0.575 roi=0.089 sharpe_1lot=4.48 days=309 events=583
+   by season: {'shoulder': (0.072, 158), 'summer': (0.0154, 296), 'winter': (0.0515, 1142)}
+   by city  : {'atlanta': (0.0004, 144), 'chicago': (0.0602, 130), 'dallas': (-0.0269, 71), 'miami': (0.0954, 232), 'nyc': (0.042, 829), 'seattle': (0.0621, 190)}
+   by month : {'2025-05': (0.109, 89), '2025-06': (0.074, 77), '2025-07': (-0.073, 76), '2025-08': (0.083, 70), '2025-09': (-0.02, 73), '2025-10': (0.024, 69), '2025-11': (0.013, 76), '2025-12': (0.056, 65), '2026-01': (0.066, 164), '2026-02': (0.035, 401), '2026-03': (0.067, 436)}
+   Kalshi h<=8: {'False': (0.0048, 418), 'True': (0.0617, 1178)}
+S1 lp+lx thr 0.08 hs 2c                              N=1007 pnl_ct=0.0732 t=5.4 win=0.593 roi=0.141 sharpe_1lot=5.05 days=309 events=505
+S1b lp+lx+blend thr 0.05 hs 2c                       N=1753 pnl_ct=0.0555 t=5.8 win=0.589 roi=0.104 sharpe_1lot=5.41 days=309 events=584
+S1b lp+lx+blend thr 0.08 hs 2c                       N=1214 pnl_ct=0.0714 t=6.0 win=0.582 roi=0.14 sharpe_1lot=5.52 days=309 events=526
+blend only lp+lpm thr 0.05 hs 2c                     N=1489 pnl_ct=0.0478 t=4.6 win=0.582 roi=0.09 sharpe_1lot=4.55 days=309 events=572
+blend only lp+lpm thr 0.08 hs 2c                     N=942 pnl_ct=0.0698 t=5.2 win=0.616 roi=0.128 sharpe_1lot=4.97 days=309 events=458
+
+=== OOS (2026-04..09) ===
+S1 lp+lx thr 0.05 hs 2c                              N=1306 pnl_ct=0.0285 t=2.4 win=0.574 roi=0.052 sharpe_1lot=3.37 days=175 events=679
+   by season: {'shoulder': (0.0226, 528), 'summer': (0.0326, 778)}
+   by city  : {'atlanta': (-0.0269, 281), 'chicago': (0.0218, 93), 'dallas': (-0.0011, 114), 'miami': (0.0675, 406), 'nyc': (0.025, 178), 'seattle': (0.0472, 234)}
+   by month : {'2026-04': (0.003, 317), '2026-05': (0.052, 211), '2026-06': (0.033, 220), '2026-07': (0.044, 180), '2026-08': (0.041, 176), '2026-09': (0.015, 202)}
+   Kalshi h<=8: {'False': (0.0208, 427), 'True': (0.0322, 879)}
+S1 lp+lx thr 0.08 hs 2c                              N=601 pnl_ct=0.0424 t=2.4 win=0.586 roi=0.078 sharpe_1lot=3.01 days=175 events=378
+S1b lp+lx+blend thr 0.05 hs 2c                       N=1534 pnl_ct=0.0392 t=3.6 win=0.576 roi=0.073 sharpe_1lot=4.85 days=175 events=749
+S1b lp+lx+blend thr 0.08 hs 2c                       N=686 pnl_ct=0.0638 t=3.9 win=0.617 roi=0.115 sharpe_1lot=5.1 days=175 events=443
+blend only lp+lpm thr 0.05 hs 2c                     N=1117 pnl_ct=0.0528 t=4.0 win=0.62 roi=0.093 sharpe_1lot=5.62 days=175 events=643
+blend only lp+lpm thr 0.08 hs 2c                     N=430 pnl_ct=0.053 t=2.5 win=0.663 roi=0.087 sharpe_1lot=3.45 days=175 events=326
+
+=== ALL ===
+S1 lp+lx thr 0.05 hs 2c                              N=2902 pnl_ct=0.0386 t=5.0 win=0.574 roi=0.072 sharpe_1lot=4.03 days=484 events=1262
+   by season: {'shoulder': (0.034, 686), 'summer': (0.0278, 1074), 'winter': (0.0515, 1142)}
+   by city  : {'atlanta': (-0.0176, 425), 'chicago': (0.0442, 223), 'dallas': (-0.011, 185), 'miami': (0.0776, 638), 'nyc': (0.039, 1007), 'seattle': (0.0539, 424)}
+   by month : {'2025-05': (0.109, 89), '2025-06': (0.074, 77), '2025-07': (-0.073, 76), '2025-08': (0.083, 70), '2025-09': (-0.02, 73), '2025-10': (0.024, 69), '2025-11': (0.013, 76), '2025-12': (0.056, 65), '2026-01': (0.066, 164), '2026-02': (0.035, 401), '2026-03': (0.067, 436), '2026-04': (0.003, 317), '2026-05': (0.052, 211), '2026-06': (0.033, 220), '2026-07': (0.044, 180), '2026-08': (0.041, 176), '2026-09': (0.015, 202)}
+   Kalshi h<=8: {'False': (0.0129, 845), 'True': (0.0491, 2057)}
+S1 lp+lx thr 0.08 hs 2c                              N=1608 pnl_ct=0.0617 t=5.7 win=0.59 roi=0.117 sharpe_1lot=4.3 days=484 events=883
+S1b lp+lx+blend thr 0.05 hs 2c                       N=3287 pnl_ct=0.0479 t=6.7 win=0.583 roi=0.09 sharpe_1lot=5.16 days=484 events=1333
+S1b lp+lx+blend thr 0.08 hs 2c                       N=1900 pnl_ct=0.0686 t=7.1 win=0.595 roi=0.13 sharpe_1lot=5.37 days=484 events=969
+blend only lp+lpm thr 0.05 hs 2c                     N=2606 pnl_ct=0.0499 t=6.1 win=0.598 roi=0.091 sharpe_1lot=4.96 days=484 events=1215
+blend only lp+lpm thr 0.08 hs 2c                     N=1372 pnl_ct=0.0645 t=5.7 win=0.63 roi=0.114 sharpe_1lot=4.45 days=484 events=784
+
+=== S2 model-free identical contracts (MIA/ATL/SEA), thr .08 hs 2c ===
+DEV S2 thr 0.05                                      N=354 pnl_ct=0.033 t=1.5 win=0.503 roi=0.07 sharpe_1lot=4.07 days=57 events=91
+DEV S2 thr 0.08                                      N=274 pnl_ct=0.0714 t=2.9 win=0.529 roi=0.156 sharpe_1lot=6.41 days=57 events=91
+   by city: {'atlanta': (0.0564, 61), 'miami': (0.1338, 104), 'seattle': (0.0203, 109)}
+DEV S2 thr 0.12                                      N=175 pnl_ct=0.1017 t=3.2 win=0.554 roi=0.225 sharpe_1lot=6.39 days=57 events=76
+OOS S2 thr 0.05                                      N=1028 pnl_ct=0.0109 t=0.9 win=0.456 roi=0.025 sharpe_1lot=1.36 days=146 events=262
+OOS S2 thr 0.08                                      N=786 pnl_ct=0.0111 t=0.7 win=0.461 roi=0.025 sharpe_1lot=1.04 days=146 events=258
+   by city: {'atlanta': (-0.0106, 265), 'miami': (0.0609, 288), 'seattle': (-0.0256, 233)}
+OOS S2 thr 0.12                                      N=529 pnl_ct=0.0229 t=1.2 win=0.459 roi=0.052 sharpe_1lot=1.61 days=146 events=227
+ALL S2 thr 0.05                                      N=1382 pnl_ct=0.0166 t=1.5 win=0.468 roi=0.037 sharpe_1lot=2.05 days=203 events=353
+ALL S2 thr 0.08                                      N=1060 pnl_ct=0.0267 t=2.1 win=0.478 roi=0.059 sharpe_1lot=2.45 days=203 events=349
+   by city: {'atlanta': (0.0019, 326), 'miami': (0.0802, 392), 'seattle': (-0.011, 342)}
+ALL S2 thr 0.12                                      N=704 pnl_ct=0.0424 t=2.6 win=0.483 roi=0.096 sharpe_1lot=2.9 days=203 events=303
+
+=== $ sizing (S1 lp+lx thr .05): contracts = f x bracket total volume ($) / price, cap $2,000 notional per signal ===
+f=0.02: total $128,864 over 534 days ($88,081/yr), avg notional/day $1,752, $Sharpe 2.42, worst day $-4,431 | DEV $99,557 OOS $29,307
+f=0.05: total $274,781 over 534 days ($187,819/yr), avg notional/day $3,976, $Sharpe 2.65, worst day $-8,524 | DEV $210,842 OOS $63,939
+f=0.10: total $413,379 over 534 days ($282,553/yr), avg notional/day $6,542, $Sharpe 2.96, worst day $-13,182 | DEV $309,699 OOS $103,679
+
+exported results/xvenue_tearsheet_data.json
